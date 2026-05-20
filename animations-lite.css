@@ -1,0 +1,424 @@
+/* ==========================================================================
+   SPHERE — Animations Lite v2.0
+   Подключить ПОСЛЕ main.css
+
+   Зависимости JS: только GSAP core (~27 KB gzip)
+   Без: Lenis, ScrollTrigger
+   Итого бандл: ~30 KB gzip vs ~53 KB в v1
+   ========================================================================== */
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   SMOOTH SCROLL + OVERFLOW FIX
+   ───────────────────────────────────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+  /*
+    НЕ ставим overflow-x: hidden на html — это убивает основной
+    scroll-контейнер браузера и колёсико мыши перестаёт работать.
+  */
+}
+
+body {
+  /*
+    overflow-x: hidden только на body — body НЕ является главным
+    scroll-контейнером, поэтому вертикальный скролл не пострадает.
+  */
+  overflow-x: hidden;
+}
+
+/*
+  Обрезаем x-выход ТОЛЬКО у прямых контейнеров анимируемых элементов.
+  НЕ вешаем overflow: hidden на .contacts целиком: секция занимает 100vh,
+  overflow: hidden на ней передаёт управление скроллом внутрь iframe/секции,
+  из-за чего колёсико мыши перестаёт скроллить страницу в этой зоне.
+*/
+.contacts__info,
+.contacts__map {
+  overflow: hidden;
+}
+
+.work__timeline {
+  overflow: visible;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CUSTOM CURSOR
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.c-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+.c-cursor__dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.c-cursor__ring {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+body.js-ready {
+  cursor: none;
+}
+
+body.js-ready a,
+body.js-ready button {
+  cursor: none;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   FLOATING PARTICLES
+   ───────────────────────────────────────────────────────────────────────────── */
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   TIMELINE LINE (DOM-элемент вместо ::before)
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.work__timeline::before {
+  display: none; /* заменяем реальным элементом для GSAP */
+}
+
+.c-timeline-line {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  width: 2px;
+  height: 83%;
+  background-color: var(--color-divider);
+  transform-origin: top center;
+  transform: scaleY(0); /* начальное состояние — линия свёрнута */
+  pointer-events: none;
+}
+
+@media (max-width: 992px) { .c-timeline-line { left: 44px; } }
+@media (max-width: 576px) { .c-timeline-line { left: 35px; } }
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   HERO — INITIAL STATES (применяются только когда JS готов)
+   Предотвращают FOUC: если JS не загрузится — элементы остаются видимыми
+   ───────────────────────────────────────────────────────────────────────────── */
+
+body.js-ready .hero__nav-link,
+body.js-ready .hero__logo,
+body.js-ready .hero__subtitle,
+body.js-ready .hero__button,
+body.js-ready .hero__arrow {
+  opacity: 0;
+}
+
+body.js-ready .cfg-result__btn.hero__button,
+body.js-ready .cfg-result__btn {
+  opacity: 1 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   WORD SPLIT — CSS-анимации для заголовков секций
+   JS устанавливает --i на каждый .word, CSS считает задержку
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.word-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+/* Начальное состояние слова — скрыто */
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(115%);
+  transition:
+      opacity  0.85s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--i, 0) * 0.07s);
+}
+
+/* Когда родитель получает .is-visible — слова «вылетают» */
+.is-visible .word {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   SERVICES — reveal карточек
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Подзаголовок секции */
+.services__subtitle {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+      opacity  0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s,
+      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+.services__header.is-visible .services__subtitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Карточки: 3D появление с rotateX */
+.service-card {
+  opacity: 0;
+  transform: translateY(60px) rotateX(8deg);
+  transform-origin: top center;
+  transition:
+      opacity  0.95s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--i, 0) * 0.13s + 0.45s);
+}
+
+.services__grid.is-visible .service-card {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   ABOUT — clip-path reveal
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.about__image-wrapper {
+  overflow: hidden;
+}
+
+.about__image {
+  clip-path: inset(0 100% 0 0);
+  transform: scale(1.06);
+  transition:
+      clip-path 1.4s cubic-bezier(0.76, 0, 0.24, 1) 0.3s,
+      transform  1.4s cubic-bezier(0.76, 0, 0.24, 1) 0.3s;
+}
+
+.about__image-wrapper.is-visible .about__image {
+  clip-path: inset(0 0% 0 0);
+  transform: scale(1);
+}
+
+.about__text {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+      opacity  1s cubic-bezier(0.16, 1, 0.3, 1) 0.85s,
+      transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.85s;
+}
+
+.about__content.is-visible .about__text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PRICING — stagger карточек
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.pricing__title,
+.pricing__subtitle {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+      opacity  0.9s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pricing__title    { transition-delay: 0s; }
+.pricing__subtitle { transition-delay: 0.18s; }
+
+.pricing__header.is-visible .pricing__title,
+.pricing__header.is-visible .pricing__subtitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pricing-card {
+  opacity: 0;
+  transform: translateY(80px) scale(0.96);
+  transition:
+      opacity  1s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.4s ease; /* hover-тень остаётся быстрой */
+  transition-delay: calc(var(--i, 0) * 0.12s + 0.35s);
+}
+
+.pricing__cards.is-visible .pricing-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.pricing-card:hover {
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.14);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   WORK — элементы таймлайна
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.work__item {
+  opacity: 0;
+  transform: translateX(-44px);
+  transition:
+      opacity  0.85s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--i, 0) * 0.1s);
+}
+
+.work__item.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.work__icon {
+  transform: scale(0) rotate(-15deg);
+  opacity: 0;
+  transition:
+      transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+      opacity   0.4s ease;
+  transition-delay: calc(var(--i, 0) * 0.1s + 0.2s);
+}
+
+.work__item.is-visible .work__icon {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+
+/* Карточки 3D tilt */
+.service-card,
+.pricing-card {
+  transform-style: preserve-3d;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CONTACTS — reveal
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.contacts__link,
+.contacts__address {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition:
+      opacity  0.8s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contacts__link:nth-child(1) { transition-delay: 0.38s; }
+.contacts__link:nth-child(2) { transition-delay: 0.5s;  }
+.contacts__address            { transition-delay: 0.62s; }
+
+.contacts__info.is-visible .contacts__link,
+.contacts__info.is-visible .contacts__address {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contacts__social {
+  opacity: 0;
+  transform: scale(0);
+  transition:
+      opacity  0.5s ease,
+      transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition-delay: calc(var(--i, 0) * 0.08s + 0.72s);
+}
+
+.contacts__info.is-visible .contacts__social {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.contacts__map {
+  opacity: 0;
+  transform: translateX(44px);
+  transition:
+      opacity  1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.18s,
+      transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.18s;
+}
+
+.contacts.is-visible .contacts__map {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   SECTION FADE — мягкий проявление при входе в viewport
+   ───────────────────────────────────────────────────────────────────────────── */
+
+section:not(.hero) {
+  opacity: 0.6;
+  transition: opacity 0.9s ease;
+}
+
+section:not(.hero).is-visible {
+  opacity: 1;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   REDUCED MOTION — уважаем системные предпочтения
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /* Сбрасываем состояния, которые GSAP мог скрыть */
+  body.js-ready .hero__nav-link,
+  body.js-ready .hero__logo,
+  body.js-ready .hero__subtitle,
+  body.js-ready .hero__button,
+  body.js-ready .hero__arrow,
+  .word,
+  .service-card,
+  .pricing-card,
+  .pricing__title,
+  .pricing__subtitle,
+  .about__image,
+  .about__text,
+  .contacts__link,
+  .contacts__address,
+  .contacts__social,
+  .contacts__map,
+  .work__item,
+  .work__icon,
+  section:not(.hero) {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+
+
+  .c-cursor{ display: none !important; }
+
+  html { scroll-behavior: auto; }
+}
