@@ -31,3 +31,32 @@ Coding rules:
 - Prefer subtle modern animations
 - Avoid excessive motion
 - Keep animations smooth and premium
+
+Critical implementation restrictions:
+
+This project is NOT React, Next.js or Tailwind.
+
+Do NOT:
+- use React
+- use JSX/TSX
+- use Tailwind CSS
+- use npm UI libraries
+- use Framer Motion
+- use component frameworks
+- use build tools
+- use package installations
+
+Implementation must remain:
+- plain HTML
+- plain CSS
+- vanilla JavaScript
+
+Design inspiration from skills is allowed.
+Framework-specific implementation is forbidden.
+
+Animations must use:
+- CSS animations
+- CSS transitions
+- lightweight vanilla JS only
+
+All redesign work must adapt to the existing static architecture.
