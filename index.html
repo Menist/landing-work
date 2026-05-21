@@ -12,26 +12,26 @@
 
   <link rel="preload" as="font" type="font/woff2" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap">
 
-  <link rel="stylesheet" href="">
-<!--  <link rel="stylesheet" href="animations-lite.css">-->
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="animations-lite.css">
   <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<!--  <script defer src="animations-lite.js"></script>-->
+  <script defer src="animations-lite.js"></script>
 
   <title>ai2b.by — Сайты для бизнеса в Беларуси</title>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════════
+<!-- ==========================================================================
      HERO
-════════════════════════════════════════════════════════════ -->
-<section class="hero">
+     ========================================================================== -->
+<section class="hero" id="top">
 
   <div class="hero__overlay"></div>
 
   <div class="hero__container">
 
-    <nav class="hero__header">
+    <nav class="hero__header" aria-label="Основная навигация">
 
       <ul class="hero__nav hero__nav--left">
         <li class="hero__nav-item">
@@ -45,7 +45,7 @@
         </li>
       </ul>
 
-      <a href="#" class="hero__logo">
+      <a href="#top" class="hero__logo" aria-label="AI2B, перейти к началу страницы">
         AI2B
       </a>
 
@@ -89,10 +89,9 @@
 
 </section>
 
-
-<!-- ═══════════════════════════════════════════════════════════
+<!-- ==========================================================================
      SERVICES — Наши услуги
-════════════════════════════════════════════════════════════ -->
+     ========================================================================== -->
 <section class="services section--padded" id="services">
   <div class="container">
 
