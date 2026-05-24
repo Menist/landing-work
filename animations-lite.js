@@ -210,6 +210,7 @@
 
     const hero    = document.querySelector(".hero");
     const content = document.querySelector(".hero__content");
+    const overlay = document.querySelector(".hero__overlay");
     if (!hero) return;
 
     let ticking = false;
@@ -222,18 +223,23 @@
         const scrollY = window.scrollY;
         const vh      = window.innerHeight;
 
-        // Параллакс фона: фон движется в 30% от скорости скролла
+        // Parallax stays present, but restrained enough to protect readability
         if (scrollY < vh * 1.5) {
-          hero.style.backgroundPositionY = `calc(50% + ${scrollY * 0.3}px)`;
+          hero.style.backgroundPositionY = `calc(50% + ${scrollY * 0.16}px)`;
         }
 
-        // Контент Hero: fade + слабый parallax
+        // Hero content keeps readability longer and only fades subtly
         if (content && scrollY < vh) {
           const progress = scrollY / vh;
-          const opacity  = Math.max(0, 1 - progress * 2.2);
-          const y        = progress * -60;
+          const fadeProgress = Math.max(0, progress - 0.12) / 0.88;
+          const opacity  = Math.max(0.8, 1 - fadeProgress * 0.2);
+          const y        = fadeProgress * -34;
           content.style.opacity   = opacity;
           content.style.transform = `translateY(${y}px)`;
+
+          if (overlay) {
+            overlay.style.opacity = `${Math.min(1, 1 + fadeProgress * 0.06)}`;
+          }
         }
 
         ticking = false;
