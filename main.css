@@ -14,10 +14,18 @@
   --hero-text-muted: rgba(245, 247, 250, 0.88);
   --hero-shadow: 0 30px 86px rgba(5, 8, 12, 0.3);
   --hero-accent-shadow: 0 20px 52px rgba(236, 181, 86, 0.22);
+  --hero-bg-shift-y: 0px;
+  --hero-glow-shift-y: 0px;
+  --hero-overlay-shift-y: 0px;
+  --hero-content-shift-y: 0px;
+  --hero-copy-shift-y: 0px;
+  --hero-spotlight-shift-y: 0px;
+  --hero-overlay-opacity: 1;
+  --hero-spotlight-opacity: 1;
   position: relative;
   min-height: 100dvh;
   color: var(--color-white);
-  background-position: 68% center;
+  background-position: 68% calc(50% + var(--hero-bg-shift-y));
   isolation: isolate;
 }
 
@@ -34,6 +42,8 @@
     radial-gradient(circle at 18% 18%, rgba(255, 196, 92, 0.2), transparent 24%),
     radial-gradient(circle at 82% 24%, rgba(255, 255, 255, 0.09), transparent 18%),
     linear-gradient(108deg, rgba(8, 10, 14, 0.92) 0%, rgba(10, 13, 18, 0.8) 46%, rgba(10, 13, 18, 0.36) 100%);
+  transform: translate3d(0, var(--hero-glow-shift-y), 0) scale(1.02);
+  transform-origin: center center;
   z-index: 0;
 }
 
@@ -53,6 +63,8 @@
 .hero__overlay {
   background:
     linear-gradient(180deg, rgba(8, 11, 16, 0.15) 0%, rgba(8, 11, 16, 0.38) 100%);
+  transform: translate3d(0, var(--hero-overlay-shift-y), 0);
+  opacity: var(--hero-overlay-opacity);
   z-index: 0;
 }
 
@@ -162,10 +174,12 @@
   width: 100%;
   padding: clamp(44px, 8vh, 72px) 0 84px;
   text-align: left;
+  transform: translate3d(0, var(--hero-content-shift-y), 0);
 }
 
 .hero__copy {
   max-width: 760px;
+  transform: translate3d(0, var(--hero-copy-shift-y), 0);
 }
 
 .hero__eyebrow {
@@ -321,6 +335,17 @@
   align-self: stretch;
   min-height: 100%;
   padding: 54px 0 20px;
+  transform: translate3d(0, var(--hero-spotlight-shift-y), 0);
+  opacity: var(--hero-spotlight-opacity);
+}
+
+.has-hero-motion .hero,
+.has-hero-motion .hero::before,
+.has-hero-motion .hero__overlay,
+.has-hero-motion .hero__content,
+.has-hero-motion .hero__copy,
+.has-hero-motion .hero__spotlight {
+  will-change: transform, opacity;
 }
 
 .hero__spotlight-panel {
@@ -524,7 +549,7 @@
 
 @media (max-width: 860px) {
   .hero {
-    background-position: 62% center;
+    background-position: 62% calc(50% + var(--hero-bg-shift-y));
   }
 
   .hero::after {
@@ -598,6 +623,19 @@
     margin-top: -16px;
     margin-left: auto;
     transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .hero::before,
+  .hero__overlay,
+  .hero__content,
+  .hero__copy,
+  .hero__spotlight {
+    transform: none;
+    opacity: 1;
+    will-change: auto;
   }
 }
 
