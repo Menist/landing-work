@@ -145,9 +145,10 @@
      SERVICES — Наши услуги
      ========================================================================== -->
 <section class="services section--padded" id="services">
-  <div class="container">
-
+<div class="services__container">
+  <div class="services__shell">
     <div class="services__header">
+      <p class="services__eyebrow">Услуги</p>
       <h2 class="services__title">Наши услуги</h2>
       <p class="services__subtitle">
         Разрабатываем сайты — быстро, надёжно,
@@ -171,8 +172,10 @@
           </svg>
         </div>
 
-        <h3 class="service-card__title">Лендинг</h3>
-        <p class="service-card__for"><span class="service-card__label">Подходит для:</span> кафе, салонов, акций</p>
+        <div class="service-card__body">
+          <h3 class="service-card__title">Лендинг</h3>
+          <p class="service-card__for"><span class="service-card__label">Подходит для:</span> кафе, салонов, акций</p>
+        </div>
 
         <ul class="service-card__list">
           <li>Адаптивный дизайн под все устройства</li>
@@ -181,9 +184,10 @@
           <li>Настройка целей — отслеживание кликов и заявок</li>
         </ul>
 
-        <p class="service-card__term">Срок: от 1 недели</p>
-
-        <a href="#configurator" class="service-card__btn">Подобрать решение</a>
+        <div class="service-card__footer">
+          <p class="service-card__term">Срок: от 1 недели</p>
+          <a href="#configurator" class="service-card__btn">Подобрать решение</a>
+        </div>
 
         <p class="service-card__design-note">
           Работаем с вашим макетом или разработаем дизайн с нуля
@@ -205,8 +209,10 @@
           </svg>
         </div>
 
-        <h3 class="service-card__title">Сайт услуг</h3>
-        <p class="service-card__for"><span class="service-card__label">Подходит для:</span> клиник, студий, агентств</p>
+        <div class="service-card__body">
+          <h3 class="service-card__title">Сайт услуг</h3>
+          <p class="service-card__for"><span class="service-card__label">Подходит для:</span> клиник, студий, агентств</p>
+        </div>
 
         <ul class="service-card__list">
           <li>Несколько страниц: о нас, услуги, контакты</li>
@@ -215,9 +221,10 @@
           <li>Настройка целей — отслеживание действий клиентов</li>
         </ul>
 
-        <p class="service-card__term">Срок: от 2 недель</p>
-
-        <a href="#configurator" class="service-card__btn">Подобрать решение</a>
+        <div class="service-card__footer">
+          <p class="service-card__term">Срок: от 2 недель</p>
+          <a href="#configurator" class="service-card__btn">Подобрать решение</a>
+        </div>
 
         <p class="service-card__design-note">
           Работаем с вашим макетом или разработаем дизайн с нуля
@@ -225,729 +232,729 @@
       </article>
 
     </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     ABOUT — О нас
-════════════════════════════════════════════════════════════ -->
-<section class="about section--padded" id="about">
-  <div class="about__container">
-
-    <div class="about__header">
-      <h2 class="about__title">О нас</h2>
-      <p class="about__subtitle">
-        За ai2b.by стоит реальная компания с многолетней историей —
-        не фриланс-одиночка
-      </p>
-    </div>
-
-    <div class="about__stats">
-
-      <div class="about__stat">
-        <div class="about__stat-number">2001</div>
-        <div class="about__stat-label">год основания IMC Computers</div>
-      </div>
-
-      <div class="about__stat">
-        <div class="about__stat-number">24+</div>
-        <div class="about__stat-label">года на рынке Беларуси</div>
-      </div>
-
-      <div class="about__stat">
-        <div class="about__stat-number">3</div>
-        <div class="about__stat-label">направления деятельности компании</div>
-      </div>
-
-    </div>
-
-    <div class="about__content">
-      <p class="about__text">
-        ai2b.by — веб-направление компании
-        <a href="https://www.imc.by" target="_blank" rel="noopener" class="about__link">IMC Computers</a>.
-        Мы создаём сайты услуг и лендинги для малого бизнеса:
-        кафе, салонов красоты, медицинских центров, студий и агентств.
-        Наш фокус — сайты, которые находят клиентов через поисковики,
-        а не просто красиво выглядят.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     ADVANTAGES — Наши преимущества
-     Используем секцию pricing как основу — структура та же
-════════════════════════════════════════════════════════════ -->
-<section class="pricing section--padded" id="advantages">
-
-  <div class="pricing__container">
-
-    <div class="pricing__header">
-      <h2 class="pricing__title">
-        Почему выбирают нас
-      </h2>
-      <p class="pricing__subtitle">
-        Каждый сайт — это не просто красивая страница,
-        а инструмент для привлечения клиентов
-      </p>
-    </div>
-
-    <div class="pricing__cards">
-
-      <article class="pricing-card">
-        <h3 class="pricing-card__title">SEO-продвижение</h3>
-        <div class="pricing-card__price">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="16" stroke="#ffbe49" stroke-width="2.5" fill="none"/>
-            <line x1="35" y1="35" x2="50" y2="50" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="24" y1="16" x2="24" y2="32" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>
-            <line x1="16" y1="24" x2="32" y2="24" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <ul class="pricing-card__list">
-          <li class="pricing-card__item">Видимость в Google и Яндекс с первого дня</li>
-          <li class="pricing-card__item">Prerendering — поисковики получают готовый HTML</li>
-          <li class="pricing-card__item">Schema.org разметка для бизнеса</li>
-          <li class="pricing-card__item">Sitemap и robots.txt</li>
-        </ul>
-        <p class="pricing-card__option">Доступно как отдельная опция</p>
-      </article>
-
-      <article class="pricing-card">
-        <h3 class="pricing-card__title">Скорость и надёжность</h3>
-        <div class="pricing-card__price">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="28" cy="28" r="22" stroke="#ffbe49" stroke-width="2.5" fill="none"/>
-            <polyline points="18,36 24,28 30,32 38,20" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <line x1="28" y1="12" x2="28" y2="16" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>
-            <line x1="12" y1="28" x2="16" y2="28" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>
-            <line x1="44" y1="28" x2="40" y2="28" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <ul class="pricing-card__list">
-          <li class="pricing-card__item">PageSpeed 92/100 на мобильных</li>
-          <li class="pricing-card__item">Загрузка менее 1 секунды</li>
-          <li class="pricing-card__item">HTTPS и защитные заголовки безопасности</li>
-          <li class="pricing-card__item">Современный стек: React, TypeScript, headless CMS</li>
-        </ul>
-        <a href="#contacts" class="pricing-card__button">
-          Обсудить проект
-        </a>
-      </article>
-
-      <article class="pricing-card">
-        <h3 class="pricing-card__title">Удобное управление</h3>
-        <div class="pricing-card__price">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="10" width="40" height="28" rx="3" stroke="#ffbe49" stroke-width="2.5" fill="none"/>
-            <line x1="8" y1="22" x2="48" y2="22" stroke="#ffbe49" stroke-width="2"/>
-            <line x1="20" y1="38" x2="36" y2="38" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="28" y1="38" x2="28" y2="46" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="18" y1="46" x2="38" y2="46" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="16" y1="30" x2="28" y2="30" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>
-            <line x1="16" y1="34" x2="24" y2="34" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="38" cy="32" r="4" stroke="#ffbe49" stroke-width="2" fill="none"/>
-          </svg>
-        </div>
-        <ul class="pricing-card__list">
-          <li class="pricing-card__item">CMS — меняете контент сами, без разработчика</li>
-          <li class="pricing-card__item">Google Analytics и Яндекс.Метрика</li>
-          <li class="pricing-card__item">Отслеживание действий клиентов на сайте</li>
-          <li class="pricing-card__item">Понимаете откуда приходят заявки</li>
-        </ul>
-        <a href="#contacts" class="pricing-card__button">
-          Обсудить проект
-        </a>
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="results section--padded" id="results">
-  <div class="results__container">
-
-    <div class="results__header">
-      <h2 class="results__title">Как мы подходим к работе</h2>
-      <p class="results__subtitle">Каждый проект — это набор решений под конкретный бизнес</p>
-    </div>
-
-    <div class="results__grid">
-
-      <div class="results__card">
-        <div class="results__card-icon">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-            <rect x="4" y="6" width="32" height="28" rx="3" stroke="#ffbe49" stroke-width="2" fill="none"/>
-            <line x1="4" y1="14" x2="36" y2="14" stroke="#ffbe49" stroke-width="1.5"/>
-            <line x1="10" y1="21" x2="30" y2="21" stroke="#ffbe49" stroke-width="1.5"/>
-            <line x1="10" y1="26" x2="24" y2="26" stroke="#ffbe49" stroke-width="1.5"/>
-          </svg>
-        </div>
-        <h3 class="results__card-title">Адаптивный дизайн</h3>
-        <p class="results__card-text">Сайт корректно выглядит на телефоне, планшете и компьютере — в каждом проекте по умолчанию</p>
-      </div>
-
-      <div class="results__card">
-        <div class="results__card-icon">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="20" r="16" stroke="#ffbe49" stroke-width="2" fill="none"/>
-            <polyline points="12,22 16,18 20,21 26,14 28,16" stroke="#ffbe49" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <line x1="20" y1="8" x2="20" y2="11" stroke="#ffbe49" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="8" y1="20" x2="11" y2="20" stroke="#ffbe49" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="32" y1="20" x2="29" y2="20" stroke="#ffbe49" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3 class="results__card-title">Скорость и безопасность</h3>
-        <p class="results__card-text">Быстрая загрузка страниц и HTTPS — базовый стандарт для всех наших сайтов</p>
-      </div>
-
-      <div class="results__card">
-        <div class="results__card-icon">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-            <rect x="6" y="8" width="28" height="20" rx="2" stroke="#ffbe49" stroke-width="2" fill="none"/>
-            <line x1="6" y1="16" x2="34" y2="16" stroke="#ffbe49" stroke-width="1.5"/>
-            <line x1="20" y1="28" x2="20" y2="34" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>
-            <line x1="14" y1="34" x2="26" y2="34" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>
-            <line x1="11" y1="22" x2="22" y2="22" stroke="#ffbe49" stroke-width="1.5"/>
-            <line x1="11" y1="26" x2="18" y2="26" stroke="#ffbe49" stroke-width="1.5"/>
-          </svg>
-        </div>
-        <h3 class="results__card-title">CMS по запросу</h3>
-        <p class="results__card-text">Подключаем удобную систему управления контентом — меняете тексты и фото самостоятельно</p>
-      </div>
-
-      <div class="results__card results__card--accent">
-        <div class="results__card-icon">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-            <circle cx="17" cy="17" r="11" stroke="#ffbe49" stroke-width="2" fill="none"/>
-            <line x1="25" y1="25" x2="35" y2="35" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="17" y1="11" x2="17" y2="23" stroke="#ffbe49" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="11" y1="17" x2="23" y2="17" stroke="#ffbe49" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3 class="results__card-title">SEO-настройка — отдельная опция</h3>
-        <p class="results__card-text">Настраиваем технические параметры сайта для поисковиков при запуске.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     HOW WE WORK — Как мы работаем
-════════════════════════════════════════════════════════════ -->
-<section class="work section--padded" id="how">
-
-  <div class="work__container">
-
-    <div class="work__header">
-      <h2 class="work__title">
-        Как мы работаем
-      </h2>
-    </div>
-
-    <div class="work__timeline">
-
-      <article class="work__item">
-        <div class="work__left">
-          <div class="work__icon">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="40" cy="40" r="39" stroke="#ffbe49" stroke-width="2" fill="#fff"/>
-              <path d="M26 40h28M40 26v28" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="40" cy="40" r="6" fill="#ffbe49"/>
-            </svg>
-          </div>
-        </div>
-        <div class="work__content">
-          <h3 class="work__item-title">Обсуждение</h3>
-          <p class="work__text">
-            Выясняем задачи бизнеса, целевую аудиторию и пожелания
-            по дизайну. Определяем структуру сайта и список страниц.
-            Согласовываем сроки и стоимость.
-          </p>
-        </div>
-      </article>
-
-      <article class="work__item">
-        <div class="work__left">
-          <div class="work__icon">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="40" cy="40" r="39" stroke="#ffbe49" stroke-width="2" fill="#fff"/>
-              <rect x="24" y="28" width="32" height="24" rx="3" stroke="#ffbe49" stroke-width="2" fill="none"/>
-              <line x1="24" y1="36" x2="56" y2="36" stroke="#ffbe49" stroke-width="1.5"/>
-              <line x1="32" y1="44" x2="48" y2="44" stroke="#ffbe49" stroke-width="1.5"/>
-            </svg>
-          </div>
-        </div>
-        <div class="work__content">
-          <h3 class="work__item-title">Прототип и дизайн</h3>
-          <p class="work__text">
-            Работаем с вашим готовым макетом — или разрабатываем
-            дизайн с нуля совместно с дизайнером. Согласовываем
-            каждый этап до начала разработки.
-          </p>
-        </div>
-      </article>
-
-      <article class="work__item">
-        <div class="work__left">
-          <div class="work__icon">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="40" cy="40" r="39" stroke="#ffbe49" stroke-width="2" fill="#fff"/>
-              <polyline points="28,44 34,38 40,42 46,34 52,38" stroke="#ffbe49" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              <line x1="28" y1="48" x2="52" y2="48" stroke="#ffbe49" stroke-width="1.5"/>
-            </svg>
-          </div>
-        </div>
-        <div class="work__content">
-          <h3 class="work__item-title">Разработка</h3>
-          <p class="work__text">
-            Верстаем и программируем сайт. Настраиваем CMS для
-            управления контентом. При необходимости подключаем аналитику и SEO.
-            Тестируем во всех популярных браузерах.
-          </p>
-        </div>
-      </article>
-
-      <article class="work__item">
-        <div class="work__left">
-          <div class="work__icon">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="40" cy="40" r="39" stroke="#ffbe49" stroke-width="2" fill="#fff"/>
-              <polyline points="28,40 36,48 52,32" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"
-                        stroke-linejoin="round" fill="none"/>
-            </svg>
-          </div>
-        </div>
-        <div class="work__content">
-          <h3 class="work__item-title">Запуск</h3>
-          <p class="work__text">
-            Размещаем сайт на хостинге, настраиваем домен и HTTPS.
-            Обучаем работе с CMS. Сайт готов принимать клиентов
-            из поисковых систем.
-          </p>
-        </div>
-      </article>
-
-    </div>
-
-  </div>
-</section>
-
-
-<section class="configurator section--padded" id="configurator">
-  <div class="configurator__container">
-
-    <div class="configurator__header">
-      <h2 class="configurator__title">Подберём решение для вас</h2>
-      <p class="configurator__subtitle">
-        Ответьте на три вопроса — мы подскажем что подойдёт вашему бизнесу
-      </p>
-    </div>
-
-    <!-- Прогресс-бар -->
-    <div class="configurator__progress">
-      <div class="configurator__progress-bar" id="cfgProgressBar"></div>
-    </div>
-    <p class="configurator__progress-label" id="cfgProgressLabel">Шаг 1 из 3</p>
-
-    <!-- ── ШАГ 1 ── -->
-    <div class="configurator__wrap">
-    <div class="configurator__step is-active" data-step="1">
-      <h3 class="configurator__question">Что вам нужно?</h3>
-      <div class="configurator__options">
-
-        <label class="cfg-option">
-          <input type="radio" name="step1" value="services" class="cfg-option__input">
-          <div class="cfg-option__card">
-            <div class="cfg-option__icon">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <rect x="3" y="5" width="34" height="30" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
-                <line x1="3" y1="13" x2="37" y2="13" stroke="currentColor" stroke-width="1.5"/>
-                <rect x="8" y="18" width="10" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                <line x1="22" y1="18" x2="32" y2="18" stroke="currentColor" stroke-width="1.5"/>
-                <line x1="22" y1="23" x2="32" y2="23" stroke="currentColor" stroke-width="1.5"/>
-                <line x1="22" y1="28" x2="28" y2="28" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <div class="cfg-option__text">
-              <strong>Рассказать об услугах компании</strong>
-              <span>Несколько страниц: о нас, услуги, контакты</span>
-            </div>
-          </div>
-        </label>
-
-        <label class="cfg-option">
-          <input type="radio" name="step1" value="landing" class="cfg-option__input">
-          <div class="cfg-option__card">
-            <div class="cfg-option__icon">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <rect x="3" y="5" width="34" height="30" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
-                <line x1="3" y1="13" x2="37" y2="13" stroke="currentColor" stroke-width="1.5"/>
-                <line x1="10" y1="20" x2="30" y2="20" stroke="currentColor" stroke-width="2"/>
-                <line x1="13" y1="25" x2="27" y2="25" stroke="currentColor" stroke-width="1.5"/>
-                <rect x="13" y="29" width="14" height="4" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
-              </svg>
-            </div>
-            <div class="cfg-option__text">
-              <strong>Продвинуть одну услугу или акцию</strong>
-              <span>Одна страница с чётким призывом к действию</span>
-            </div>
-          </div>
-        </label>
-
-        <label class="cfg-option">
-          <input type="radio" name="step1" value="card" class="cfg-option__input">
-          <div class="cfg-option__card">
-            <div class="cfg-option__icon">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <rect x="5" y="10" width="30" height="20" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
-                <circle cx="14" cy="20" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                <line x1="22" y1="17" x2="31" y2="17" stroke="currentColor" stroke-width="1.5"/>
-                <line x1="22" y1="21" x2="31" y2="21" stroke="currentColor" stroke-width="1.5"/>
-                <line x1="22" y1="25" x2="27" y2="25" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <div class="cfg-option__text">
-              <strong>Простое онлайн-присутствие</strong>
-              <span>Контакты, адрес, часы работы, соцсети</span>
-            </div>
-          </div>
-        </label>
-
-      </div>
-    </div>
-
-    <!-- ── ШАГ 2 ── -->
-    <div class="configurator__step" data-step="2">
-      <h3 class="configurator__question">Хотите сами менять тексты и фото без программиста?</h3>
-      <div class="configurator__options">
-
-        <label class="cfg-option">
-          <input type="radio" name="step2" value="yes" class="cfg-option__input">
-          <div class="cfg-option__card">
-            <div class="cfg-option__icon">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <rect x="5" y="8" width="30" height="24" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
-                <line x1="5" y1="16" x2="35" y2="16" stroke="currentColor" stroke-width="1.5"/>
-                <circle cx="20" cy="10" r="1.5" fill="currentColor"/>
-                <line x1="10" y1="22" x2="30" y2="22" stroke="currentColor" stroke-width="1.5"/>
-                <line x1="10" y1="27" x2="22" y2="27" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M27 26 L32 24 L30 29 Z" fill="currentColor"/>
-              </svg>
-            </div>
-            <div class="cfg-option__text">
-              <strong>Да, хочу управлять сам</strong>
-              <span>Подключим удобную CMS — меняете контент как в Word</span>
-            </div>
-          </div>
-        </label>
-
-        <label class="cfg-option">
-          <input type="radio" name="step2" value="no" class="cfg-option__input">
-          <div class="cfg-option__card">
-            <div class="cfg-option__icon">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <circle cx="20" cy="15" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
-                <path d="M6 35c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
-              </svg>
-            </div>
-            <div class="cfg-option__text">
-              <strong>Нет, буду обращаться к вам</strong>
-              <span>Мы внесём правки по вашему запросу</span>
-            </div>
-          </div>
-        </label>
-        <label class="cfg-option">
-          <input type="radio" name="step2" value="static" class="cfg-option__input">
-          <div class="cfg-option__card">
-            <div class="cfg-option__icon">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <rect x="4" y="8" width="32" height="24" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
-                <line x1="4" y1="16" x2="36" y2="16" stroke="currentColor" stroke-width="1.5"/>
-                <line x1="10" y1="23" x2="30" y2="23" stroke="currentColor" stroke-width="1.5"/>
-                <line x1="10" y1="28" x2="22" y2="28" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <div class="cfg-option__text">
-              <strong>Контент не будет меняться</strong>
-              <span>Статичный сайт — CMS не требуется</span>
-            </div>
-          </div>
-        </label>
-
-      </div>
-    </div>
-
-    <!-- ── ШАГ 3 ── -->
-    <div class="configurator__step" data-step="3">
-      <h3 class="configurator__question">Нужно ли продвижение в Google и Яндекс?</h3>
-      <div class="configurator__options configurator__options--two">
-
-        <label class="cfg-option">
-          <input type="radio" name="step3" value="yes" class="cfg-option__input">
-          <div class="cfg-option__card">
-            <div class="cfg-option__icon">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <circle cx="18" cy="18" r="11" stroke="currentColor" stroke-width="2" fill="none"/>
-                <line x1="26" y1="26" x2="35" y2="35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                <line x1="18" y1="11" x2="18" y2="25" stroke="currentColor" stroke-width="1.5"/>
-                <line x1="11" y1="18" x2="25" y2="18" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <div class="cfg-option__text">
-              <strong>Да, хочу клиентов из поиска</strong>
-              <span>Настроим SEO, Schema.org и sitemap с первого дня</span>
-            </div>
-          </div>
-        </label>
-
-        <label class="cfg-option">
-          <input type="radio" name="step3" value="no" class="cfg-option__input">
-          <div class="cfg-option__card">
-            <div class="cfg-option__icon">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <path d="M8 20 L16 28 L32 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              </svg>
-            </div>
-            <div class="cfg-option__text">
-              <strong>Пока не нужно</strong>
-              <span>Сосредоточимся на дизайне и структуре сайта</span>
-            </div>
-          </div>
-        </label>
-
-      </div>
-    </div>
-
-    <!-- ── РЕЗУЛЬТАТ ── -->
-    <div class="configurator__step configurator__result" data-step="result" id="cfgResult">
-      <div class="cfg-result__icon">✓</div>
-      <h3 class="cfg-result__title" id="cfgResultTitle"></h3>
-      <p class="cfg-result__desc" id="cfgResultDesc"></p>
-      <ul class="cfg-result__list" id="cfgResultList"></ul>
-      <a href="#contacts" class="hero__button cfg-result__btn" id="cfgResultBtn">
-        Оставить заявку
-      </a>
-      <button class="cfg-reset" id="cfgReset">← Ответить заново</button>
-    </div>
-
-    <!-- Навигация -->
-    <div class="configurator__nav" id="cfgNav">
-      <button class="cfg-btn cfg-btn--back" id="cfgBack">
-        ← Назад
-      </button>
-      <button class="cfg-btn cfg-btn--next" id="cfgNext" disabled>
-        Далее →
-      </button>
-    </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     CONTACTS — полная секция с формой и EmailJS
-     Заменяет твою секцию contacts целиком
-════════════════════════════════════════════════════════════ -->
-<!-- MODAL — форма из конфигуратора -->
-<div class="cfg-modal" id="cfgModal" role="dialog" aria-modal="true" aria-label="Оставить заявку">
-  <div class="cfg-modal__overlay" id="cfgModalOverlay"></div>
-  <div class="cfg-modal__window">
-
-    <button class="cfg-modal__close" id="cfgModalClose" aria-label="Закрыть">
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-        <line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </button>
-
-    <!-- Используем те же классы что и в секции contacts -->
-    <div class="contacts__form-card">
-
-      <h3 class="contacts__form-title">Оставить заявку</h3>
-
-      <!-- Итог конфигуратора показывается над формой -->
-      <div class="cfg-modal__summary" id="cfgModalSummary"></div>
-
-      <form class="contacts__form" id="modalContactForm" novalidate>
-
-        <input type="hidden" id="modal-cfg-result" name="cfg_result" value="">
-
-        <div class="contacts__field">
-          <input type="text" id="modal-name" name="from_name"
-                 class="contacts__input" placeholder=" " required autocomplete="name"/>
-          <label for="modal-name">Ваше имя *</label>
-        </div>
-
-        <div class="contacts__field">
-          <input type="tel" id="modal-phone" name="from_phone"
-                 class="contacts__input" placeholder=" " required autocomplete="tel"/>
-          <label for="modal-phone">Телефон *</label>
-        </div>
-
-        <div class="contacts__field">
-          <textarea id="modal-message" name="message"
-                    class="contacts__input contacts__textarea" placeholder=" " rows="3"></textarea>
-          <label for="modal-message">Комментарий</label>
-        </div>
-
-        <button type="submit" class="contacts__submit" id="modalSubmit">
-          Отправить заявку
-        </button>
-
-        <p class="contacts__status" id="modalStatus" aria-live="polite"></p>
-
-      </form>
-
-    </div>
   </div>
 </div>
-<section class="contacts" id="contacts">
-
-  <!-- Левая колонка: info + форма -->
-  <div class="contacts__wrap">
-
-    <div class="contacts__info">
-      <div class="contacts__content">
-
-        <h2 class="contacts__title">Обсудим ваш проект</h2>
-
-        <div class="contacts__group">
-          <a href="tel:+375000000000" class="contacts__link">+375 (00) 000-00-00</a>
-          <a href="mailto:hello@ai2b.by" class="contacts__link">hello@ai2b.by</a>
-        </div>
-
-        <p class="contacts__address">Беларусь, работаем удалённо по всей стране</p>
-
-        <div class="contacts__socials">
-          <a href="#" class="contacts__social">
-            <svg role="presentation" width="30px" height="30px" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50Zm21.977-68.056c.386-4.38-4.24-2.576-4.24-2.576-3.415 1.414-6.937 2.85-10.497 4.302-11.04 4.503-22.444 9.155-32.159 13.734-5.268 1.932-2.184 3.864-2.184 3.864l8.351 2.577c3.855 1.16 5.91-.129 5.91-.129l17.988-12.238c6.424-4.38 4.882-.773 3.34.773l-13.49 12.882c-2.056 1.804-1.028 3.35-.129 4.123 2.55 2.249 8.82 6.364 11.557 8.16.712.467 1.185.778 1.292.858.642.515 4.111 2.834 6.424 2.319 2.313-.516 2.57-3.479 2.57-3.479l3.083-20.226c.462-3.511.993-6.886 1.417-9.582.4-2.546.705-4.485.767-5.362Z" fill="#000000"/>
-            </svg>
-          </a>
-          <a href="#" class="contacts__social">
-            <svg role="presentation" width="30px" height="30px" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="50" fill="#000000"/>
-              <path d="M30 28L40 28L50 62L60 28L70 28L56 72L44 72L30 28Z" fill="white"/>
-            </svg>
-          </a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Форма -->
-    <div class="contacts__form-wrap">
-      <div class="contacts__form-inner">
-        <div class="contacts__form-card">
-
-          <h3 class="contacts__form-title">Оставить заявку</h3>
-
-          <form class="contacts__form" id="contactForm" novalidate>
-
-            <!-- Скрытое поле: результат конфигуратора -->
-            <!-- Заполняется автоматически если клиент прошёл конфигуратор -->
-            <input
-                type="hidden"
-                id="cfg-result-hidden"
-                name="cfg_result"
-                value=""
-            />
-
-            <div class="contacts__field">
-              <input
-                  type="text"
-                  id="form-name"
-                  name="from_name"
-                  class="contacts__input"
-                  placeholder=" "
-                  required
-                  autocomplete="name"
-              />
-              <label for="form-name">Ваше имя *</label>
-            </div>
-
-            <div class="contacts__field">
-              <input
-                  type="tel"
-                  id="form-phone"
-                  name="from_phone"
-                  class="contacts__input"
-                  placeholder=" "
-                  required
-                  autocomplete="tel"
-              />
-              <label for="form-phone">Телефон *</label>
-            </div>
-
-            <div class="contacts__field">
-              <textarea
-                  id="form-message"
-                  name="message"
-                  class="contacts__input contacts__textarea"
-                  placeholder=" "
-                  rows="4"
-              ></textarea>
-              <label for="form-message">Кратко о проекте</label>
-            </div>
-
-            <button type="submit" class="contacts__submit" id="formSubmit">
-              Отправить заявку
-            </button>
-
-            <p class="contacts__status" id="formStatus" aria-live="polite"></p>
-
-          </form>
-
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Правая колонка: карта -->
-  <div class="contacts__map">
-
-    <div class="contacts__map-overlay">
-      <div class="contacts__map-hint">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-          <circle cx="12" cy="9" r="2.5"/>
-        </svg>
-        <span>г. Минск, пр. Независимости, д. 68-2, к.108</span>
-      </div>
-    </div>
-
-    <a href="https://yandex.by/maps/?rtext=~53.921621,27.600243&rtt=auto"
-       target="_blank" rel="noopener" class="contacts__map-route">
-      Построить маршрут
-    </a>
-
-    <iframe
-        data-src="https://yandex.ru/map-widget/v1/?ll=27.600281%2C53.921440&z=17&pt=27.600243,53.921621,pm2orgm"
-        width="100%"
-        height="100%"
-        frameborder="0"
-        allowfullscreen="true"
-        loading="lazy"
-        class="js-lazy-iframe">
-    </iframe>
-
-  </div>
-
 </section>
-<script type="module" src="script/config.js"></script>
-<script type="module" src="script/contact-form.js"></script>
-<script type="module" src="script/configurator.js"></script>
-<script type="module" src="script/hero-motion.js"></script>
-<footer class="site-footer">
-  <p>© 2026 ai2b.by — IMC COMPUTERS LTD</p>
-</footer>
+
+<!--&lt;!&ndash; ═══════════════════════════════════════════════════════════-->
+<!--     ABOUT — О нас-->
+<!--════════════════════════════════════════════════════════════ &ndash;&gt;-->
+<!--<section class="about section&#45;&#45;padded" id="about">-->
+<!--  <div class="about__container">-->
+
+<!--    <div class="about__header">-->
+<!--      <h2 class="about__title">О нас</h2>-->
+<!--      <p class="about__subtitle">-->
+<!--        За ai2b.by стоит реальная компания с многолетней историей —-->
+<!--        не фриланс-одиночка-->
+<!--      </p>-->
+<!--    </div>-->
+
+<!--    <div class="about__stats">-->
+
+<!--      <div class="about__stat">-->
+<!--        <div class="about__stat-number">2001</div>-->
+<!--        <div class="about__stat-label">год основания IMC Computers</div>-->
+<!--      </div>-->
+
+<!--      <div class="about__stat">-->
+<!--        <div class="about__stat-number">24+</div>-->
+<!--        <div class="about__stat-label">года на рынке Беларуси</div>-->
+<!--      </div>-->
+
+<!--      <div class="about__stat">-->
+<!--        <div class="about__stat-number">3</div>-->
+<!--        <div class="about__stat-label">направления деятельности компании</div>-->
+<!--      </div>-->
+
+<!--    </div>-->
+
+<!--    <div class="about__content">-->
+<!--      <p class="about__text">-->
+<!--        ai2b.by — веб-направление компании-->
+<!--        <a href="https://www.imc.by" target="_blank" rel="noopener" class="about__link">IMC Computers</a>.-->
+<!--        Мы создаём сайты услуг и лендинги для малого бизнеса:-->
+<!--        кафе, салонов красоты, медицинских центров, студий и агентств.-->
+<!--        Наш фокус — сайты, которые находят клиентов через поисковики,-->
+<!--        а не просто красиво выглядят.-->
+<!--      </p>-->
+<!--    </div>-->
+
+<!--  </div>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; ═══════════════════════════════════════════════════════════-->
+<!--     ADVANTAGES — Наши преимущества-->
+<!--     Используем секцию pricing как основу — структура та же-->
+<!--════════════════════════════════════════════════════════════ &ndash;&gt;-->
+<!--<section class="pricing section&#45;&#45;padded" id="advantages">-->
+
+<!--  <div class="pricing__container">-->
+
+<!--    <div class="pricing__header">-->
+<!--      <h2 class="pricing__title">-->
+<!--        Почему выбирают нас-->
+<!--      </h2>-->
+<!--      <p class="pricing__subtitle">-->
+<!--        Каждый сайт — это не просто красивая страница,-->
+<!--        а инструмент для привлечения клиентов-->
+<!--      </p>-->
+<!--    </div>-->
+
+<!--    <div class="pricing__cards">-->
+
+<!--      <article class="pricing-card">-->
+<!--        <h3 class="pricing-card__title">SEO-продвижение</h3>-->
+<!--        <div class="pricing-card__price">-->
+<!--          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--            <circle cx="24" cy="24" r="16" stroke="#ffbe49" stroke-width="2.5" fill="none"/>-->
+<!--            <line x1="35" y1="35" x2="50" y2="50" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>-->
+<!--            <line x1="24" y1="16" x2="24" y2="32" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>-->
+<!--            <line x1="16" y1="24" x2="32" y2="24" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>-->
+<!--          </svg>-->
+<!--        </div>-->
+<!--        <ul class="pricing-card__list">-->
+<!--          <li class="pricing-card__item">Видимость в Google и Яндекс с первого дня</li>-->
+<!--          <li class="pricing-card__item">Prerendering — поисковики получают готовый HTML</li>-->
+<!--          <li class="pricing-card__item">Schema.org разметка для бизнеса</li>-->
+<!--          <li class="pricing-card__item">Sitemap и robots.txt</li>-->
+<!--        </ul>-->
+<!--        <p class="pricing-card__option">Доступно как отдельная опция</p>-->
+<!--      </article>-->
+
+<!--      <article class="pricing-card">-->
+<!--        <h3 class="pricing-card__title">Скорость и надёжность</h3>-->
+<!--        <div class="pricing-card__price">-->
+<!--          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--            <circle cx="28" cy="28" r="22" stroke="#ffbe49" stroke-width="2.5" fill="none"/>-->
+<!--            <polyline points="18,36 24,28 30,32 38,20" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>-->
+<!--            <line x1="28" y1="12" x2="28" y2="16" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>-->
+<!--            <line x1="12" y1="28" x2="16" y2="28" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>-->
+<!--            <line x1="44" y1="28" x2="40" y2="28" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>-->
+<!--          </svg>-->
+<!--        </div>-->
+<!--        <ul class="pricing-card__list">-->
+<!--          <li class="pricing-card__item">PageSpeed 92/100 на мобильных</li>-->
+<!--          <li class="pricing-card__item">Загрузка менее 1 секунды</li>-->
+<!--          <li class="pricing-card__item">HTTPS и защитные заголовки безопасности</li>-->
+<!--          <li class="pricing-card__item">Современный стек: React, TypeScript, headless CMS</li>-->
+<!--        </ul>-->
+<!--        <a href="#contacts" class="pricing-card__button">-->
+<!--          Обсудить проект-->
+<!--        </a>-->
+<!--      </article>-->
+
+<!--      <article class="pricing-card">-->
+<!--        <h3 class="pricing-card__title">Удобное управление</h3>-->
+<!--        <div class="pricing-card__price">-->
+<!--          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--            <rect x="8" y="10" width="40" height="28" rx="3" stroke="#ffbe49" stroke-width="2.5" fill="none"/>-->
+<!--            <line x1="8" y1="22" x2="48" y2="22" stroke="#ffbe49" stroke-width="2"/>-->
+<!--            <line x1="20" y1="38" x2="36" y2="38" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>-->
+<!--            <line x1="28" y1="38" x2="28" y2="46" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>-->
+<!--            <line x1="18" y1="46" x2="38" y2="46" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>-->
+<!--            <line x1="16" y1="30" x2="28" y2="30" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>-->
+<!--            <line x1="16" y1="34" x2="24" y2="34" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>-->
+<!--            <circle cx="38" cy="32" r="4" stroke="#ffbe49" stroke-width="2" fill="none"/>-->
+<!--          </svg>-->
+<!--        </div>-->
+<!--        <ul class="pricing-card__list">-->
+<!--          <li class="pricing-card__item">CMS — меняете контент сами, без разработчика</li>-->
+<!--          <li class="pricing-card__item">Google Analytics и Яндекс.Метрика</li>-->
+<!--          <li class="pricing-card__item">Отслеживание действий клиентов на сайте</li>-->
+<!--          <li class="pricing-card__item">Понимаете откуда приходят заявки</li>-->
+<!--        </ul>-->
+<!--        <a href="#contacts" class="pricing-card__button">-->
+<!--          Обсудить проект-->
+<!--        </a>-->
+<!--      </article>-->
+
+<!--    </div>-->
+
+<!--  </div>-->
+
+<!--</section>-->
+
+<!--<section class="results section&#45;&#45;padded" id="results">-->
+<!--  <div class="results__container">-->
+
+<!--    <div class="results__header">-->
+<!--      <h2 class="results__title">Как мы подходим к работе</h2>-->
+<!--      <p class="results__subtitle">Каждый проект — это набор решений под конкретный бизнес</p>-->
+<!--    </div>-->
+
+<!--    <div class="results__grid">-->
+
+<!--      <div class="results__card">-->
+<!--        <div class="results__card-icon">-->
+<!--          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">-->
+<!--            <rect x="4" y="6" width="32" height="28" rx="3" stroke="#ffbe49" stroke-width="2" fill="none"/>-->
+<!--            <line x1="4" y1="14" x2="36" y2="14" stroke="#ffbe49" stroke-width="1.5"/>-->
+<!--            <line x1="10" y1="21" x2="30" y2="21" stroke="#ffbe49" stroke-width="1.5"/>-->
+<!--            <line x1="10" y1="26" x2="24" y2="26" stroke="#ffbe49" stroke-width="1.5"/>-->
+<!--          </svg>-->
+<!--        </div>-->
+<!--        <h3 class="results__card-title">Адаптивный дизайн</h3>-->
+<!--        <p class="results__card-text">Сайт корректно выглядит на телефоне, планшете и компьютере — в каждом проекте по умолчанию</p>-->
+<!--      </div>-->
+
+<!--      <div class="results__card">-->
+<!--        <div class="results__card-icon">-->
+<!--          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">-->
+<!--            <circle cx="20" cy="20" r="16" stroke="#ffbe49" stroke-width="2" fill="none"/>-->
+<!--            <polyline points="12,22 16,18 20,21 26,14 28,16" stroke="#ffbe49" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>-->
+<!--            <line x1="20" y1="8" x2="20" y2="11" stroke="#ffbe49" stroke-width="1.5" stroke-linecap="round"/>-->
+<!--            <line x1="8" y1="20" x2="11" y2="20" stroke="#ffbe49" stroke-width="1.5" stroke-linecap="round"/>-->
+<!--            <line x1="32" y1="20" x2="29" y2="20" stroke="#ffbe49" stroke-width="1.5" stroke-linecap="round"/>-->
+<!--          </svg>-->
+<!--        </div>-->
+<!--        <h3 class="results__card-title">Скорость и безопасность</h3>-->
+<!--        <p class="results__card-text">Быстрая загрузка страниц и HTTPS — базовый стандарт для всех наших сайтов</p>-->
+<!--      </div>-->
+
+<!--      <div class="results__card">-->
+<!--        <div class="results__card-icon">-->
+<!--          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">-->
+<!--            <rect x="6" y="8" width="28" height="20" rx="2" stroke="#ffbe49" stroke-width="2" fill="none"/>-->
+<!--            <line x1="6" y1="16" x2="34" y2="16" stroke="#ffbe49" stroke-width="1.5"/>-->
+<!--            <line x1="20" y1="28" x2="20" y2="34" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>-->
+<!--            <line x1="14" y1="34" x2="26" y2="34" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>-->
+<!--            <line x1="11" y1="22" x2="22" y2="22" stroke="#ffbe49" stroke-width="1.5"/>-->
+<!--            <line x1="11" y1="26" x2="18" y2="26" stroke="#ffbe49" stroke-width="1.5"/>-->
+<!--          </svg>-->
+<!--        </div>-->
+<!--        <h3 class="results__card-title">CMS по запросу</h3>-->
+<!--        <p class="results__card-text">Подключаем удобную систему управления контентом — меняете тексты и фото самостоятельно</p>-->
+<!--      </div>-->
+
+<!--      <div class="results__card results__card&#45;&#45;accent">-->
+<!--        <div class="results__card-icon">-->
+<!--          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">-->
+<!--            <circle cx="17" cy="17" r="11" stroke="#ffbe49" stroke-width="2" fill="none"/>-->
+<!--            <line x1="25" y1="25" x2="35" y2="35" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>-->
+<!--            <line x1="17" y1="11" x2="17" y2="23" stroke="#ffbe49" stroke-width="1.5" stroke-linecap="round"/>-->
+<!--            <line x1="11" y1="17" x2="23" y2="17" stroke="#ffbe49" stroke-width="1.5" stroke-linecap="round"/>-->
+<!--          </svg>-->
+<!--        </div>-->
+<!--        <h3 class="results__card-title">SEO-настройка — отдельная опция</h3>-->
+<!--        <p class="results__card-text">Настраиваем технические параметры сайта для поисковиков при запуске.</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; ═══════════════════════════════════════════════════════════-->
+<!--     HOW WE WORK — Как мы работаем-->
+<!--════════════════════════════════════════════════════════════ &ndash;&gt;-->
+<!--<section class="work section&#45;&#45;padded" id="how">-->
+
+<!--  <div class="work__container">-->
+
+<!--    <div class="work__header">-->
+<!--      <h2 class="work__title">-->
+<!--        Как мы работаем-->
+<!--      </h2>-->
+<!--    </div>-->
+
+<!--    <div class="work__timeline">-->
+
+<!--      <article class="work__item">-->
+<!--        <div class="work__left">-->
+<!--          <div class="work__icon">-->
+<!--            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--              <circle cx="40" cy="40" r="39" stroke="#ffbe49" stroke-width="2" fill="#fff"/>-->
+<!--              <path d="M26 40h28M40 26v28" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>-->
+<!--              <circle cx="40" cy="40" r="6" fill="#ffbe49"/>-->
+<!--            </svg>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="work__content">-->
+<!--          <h3 class="work__item-title">Обсуждение</h3>-->
+<!--          <p class="work__text">-->
+<!--            Выясняем задачи бизнеса, целевую аудиторию и пожелания-->
+<!--            по дизайну. Определяем структуру сайта и список страниц.-->
+<!--            Согласовываем сроки и стоимость.-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </article>-->
+
+<!--      <article class="work__item">-->
+<!--        <div class="work__left">-->
+<!--          <div class="work__icon">-->
+<!--            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--              <circle cx="40" cy="40" r="39" stroke="#ffbe49" stroke-width="2" fill="#fff"/>-->
+<!--              <rect x="24" y="28" width="32" height="24" rx="3" stroke="#ffbe49" stroke-width="2" fill="none"/>-->
+<!--              <line x1="24" y1="36" x2="56" y2="36" stroke="#ffbe49" stroke-width="1.5"/>-->
+<!--              <line x1="32" y1="44" x2="48" y2="44" stroke="#ffbe49" stroke-width="1.5"/>-->
+<!--            </svg>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="work__content">-->
+<!--          <h3 class="work__item-title">Прототип и дизайн</h3>-->
+<!--          <p class="work__text">-->
+<!--            Работаем с вашим готовым макетом — или разрабатываем-->
+<!--            дизайн с нуля совместно с дизайнером. Согласовываем-->
+<!--            каждый этап до начала разработки.-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </article>-->
+
+<!--      <article class="work__item">-->
+<!--        <div class="work__left">-->
+<!--          <div class="work__icon">-->
+<!--            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--              <circle cx="40" cy="40" r="39" stroke="#ffbe49" stroke-width="2" fill="#fff"/>-->
+<!--              <polyline points="28,44 34,38 40,42 46,34 52,38" stroke="#ffbe49" stroke-width="2.5"-->
+<!--                        stroke-linecap="round" stroke-linejoin="round" fill="none"/>-->
+<!--              <line x1="28" y1="48" x2="52" y2="48" stroke="#ffbe49" stroke-width="1.5"/>-->
+<!--            </svg>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="work__content">-->
+<!--          <h3 class="work__item-title">Разработка</h3>-->
+<!--          <p class="work__text">-->
+<!--            Верстаем и программируем сайт. Настраиваем CMS для-->
+<!--            управления контентом. При необходимости подключаем аналитику и SEO.-->
+<!--            Тестируем во всех популярных браузерах.-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </article>-->
+
+<!--      <article class="work__item">-->
+<!--        <div class="work__left">-->
+<!--          <div class="work__icon">-->
+<!--            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--              <circle cx="40" cy="40" r="39" stroke="#ffbe49" stroke-width="2" fill="#fff"/>-->
+<!--              <polyline points="28,40 36,48 52,32" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"-->
+<!--                        stroke-linejoin="round" fill="none"/>-->
+<!--            </svg>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="work__content">-->
+<!--          <h3 class="work__item-title">Запуск</h3>-->
+<!--          <p class="work__text">-->
+<!--            Размещаем сайт на хостинге, настраиваем домен и HTTPS.-->
+<!--            Обучаем работе с CMS. Сайт готов принимать клиентов-->
+<!--            из поисковых систем.-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </article>-->
+
+<!--    </div>-->
+
+<!--  </div>-->
+<!--</section>-->
+
+
+<!--<section class="configurator section&#45;&#45;padded" id="configurator">-->
+<!--  <div class="configurator__container">-->
+
+<!--    <div class="configurator__header">-->
+<!--      <h2 class="configurator__title">Подберём решение для вас</h2>-->
+<!--      <p class="configurator__subtitle">-->
+<!--        Ответьте на три вопроса — мы подскажем что подойдёт вашему бизнесу-->
+<!--      </p>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Прогресс-бар &ndash;&gt;-->
+<!--    <div class="configurator__progress">-->
+<!--      <div class="configurator__progress-bar" id="cfgProgressBar"></div>-->
+<!--    </div>-->
+<!--    <p class="configurator__progress-label" id="cfgProgressLabel">Шаг 1 из 3</p>-->
+
+<!--    &lt;!&ndash; ── ШАГ 1 ── &ndash;&gt;-->
+<!--    <div class="configurator__wrap">-->
+<!--    <div class="configurator__step is-active" data-step="1">-->
+<!--      <h3 class="configurator__question">Что вам нужно?</h3>-->
+<!--      <div class="configurator__options">-->
+
+<!--        <label class="cfg-option">-->
+<!--          <input type="radio" name="step1" value="services" class="cfg-option__input">-->
+<!--          <div class="cfg-option__card">-->
+<!--            <div class="cfg-option__icon">-->
+<!--              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">-->
+<!--                <rect x="3" y="5" width="34" height="30" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>-->
+<!--                <line x1="3" y1="13" x2="37" y2="13" stroke="currentColor" stroke-width="1.5"/>-->
+<!--                <rect x="8" y="18" width="10" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/>-->
+<!--                <line x1="22" y1="18" x2="32" y2="18" stroke="currentColor" stroke-width="1.5"/>-->
+<!--                <line x1="22" y1="23" x2="32" y2="23" stroke="currentColor" stroke-width="1.5"/>-->
+<!--                <line x1="22" y1="28" x2="28" y2="28" stroke="currentColor" stroke-width="1.5"/>-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <div class="cfg-option__text">-->
+<!--              <strong>Рассказать об услугах компании</strong>-->
+<!--              <span>Несколько страниц: о нас, услуги, контакты</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </label>-->
+
+<!--        <label class="cfg-option">-->
+<!--          <input type="radio" name="step1" value="landing" class="cfg-option__input">-->
+<!--          <div class="cfg-option__card">-->
+<!--            <div class="cfg-option__icon">-->
+<!--              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">-->
+<!--                <rect x="3" y="5" width="34" height="30" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>-->
+<!--                <line x1="3" y1="13" x2="37" y2="13" stroke="currentColor" stroke-width="1.5"/>-->
+<!--                <line x1="10" y1="20" x2="30" y2="20" stroke="currentColor" stroke-width="2"/>-->
+<!--                <line x1="13" y1="25" x2="27" y2="25" stroke="currentColor" stroke-width="1.5"/>-->
+<!--                <rect x="13" y="29" width="14" height="4" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <div class="cfg-option__text">-->
+<!--              <strong>Продвинуть одну услугу или акцию</strong>-->
+<!--              <span>Одна страница с чётким призывом к действию</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </label>-->
+
+<!--        <label class="cfg-option">-->
+<!--          <input type="radio" name="step1" value="card" class="cfg-option__input">-->
+<!--          <div class="cfg-option__card">-->
+<!--            <div class="cfg-option__icon">-->
+<!--              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">-->
+<!--                <rect x="5" y="10" width="30" height="20" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>-->
+<!--                <circle cx="14" cy="20" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/>-->
+<!--                <line x1="22" y1="17" x2="31" y2="17" stroke="currentColor" stroke-width="1.5"/>-->
+<!--                <line x1="22" y1="21" x2="31" y2="21" stroke="currentColor" stroke-width="1.5"/>-->
+<!--                <line x1="22" y1="25" x2="27" y2="25" stroke="currentColor" stroke-width="1.5"/>-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <div class="cfg-option__text">-->
+<!--              <strong>Простое онлайн-присутствие</strong>-->
+<!--              <span>Контакты, адрес, часы работы, соцсети</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </label>-->
+
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; ── ШАГ 2 ── &ndash;&gt;-->
+<!--    <div class="configurator__step" data-step="2">-->
+<!--      <h3 class="configurator__question">Хотите сами менять тексты и фото без программиста?</h3>-->
+<!--      <div class="configurator__options">-->
+
+<!--        <label class="cfg-option">-->
+<!--          <input type="radio" name="step2" value="yes" class="cfg-option__input">-->
+<!--          <div class="cfg-option__card">-->
+<!--            <div class="cfg-option__icon">-->
+<!--              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">-->
+<!--                <rect x="5" y="8" width="30" height="24" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>-->
+<!--                <line x1="5" y1="16" x2="35" y2="16" stroke="currentColor" stroke-width="1.5"/>-->
+<!--                <circle cx="20" cy="10" r="1.5" fill="currentColor"/>-->
+<!--                <line x1="10" y1="22" x2="30" y2="22" stroke="currentColor" stroke-width="1.5"/>-->
+<!--                <line x1="10" y1="27" x2="22" y2="27" stroke="currentColor" stroke-width="1.5"/>-->
+<!--                <path d="M27 26 L32 24 L30 29 Z" fill="currentColor"/>-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <div class="cfg-option__text">-->
+<!--              <strong>Да, хочу управлять сам</strong>-->
+<!--              <span>Подключим удобную CMS — меняете контент как в Word</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </label>-->
+
+<!--        <label class="cfg-option">-->
+<!--          <input type="radio" name="step2" value="no" class="cfg-option__input">-->
+<!--          <div class="cfg-option__card">-->
+<!--            <div class="cfg-option__icon">-->
+<!--              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">-->
+<!--                <circle cx="20" cy="15" r="7" stroke="currentColor" stroke-width="2" fill="none"/>-->
+<!--                <path d="M6 35c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <div class="cfg-option__text">-->
+<!--              <strong>Нет, буду обращаться к вам</strong>-->
+<!--              <span>Мы внесём правки по вашему запросу</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </label>-->
+<!--        <label class="cfg-option">-->
+<!--          <input type="radio" name="step2" value="static" class="cfg-option__input">-->
+<!--          <div class="cfg-option__card">-->
+<!--            <div class="cfg-option__icon">-->
+<!--              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">-->
+<!--                <rect x="4" y="8" width="32" height="24" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>-->
+<!--                <line x1="4" y1="16" x2="36" y2="16" stroke="currentColor" stroke-width="1.5"/>-->
+<!--                <line x1="10" y1="23" x2="30" y2="23" stroke="currentColor" stroke-width="1.5"/>-->
+<!--                <line x1="10" y1="28" x2="22" y2="28" stroke="currentColor" stroke-width="1.5"/>-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <div class="cfg-option__text">-->
+<!--              <strong>Контент не будет меняться</strong>-->
+<!--              <span>Статичный сайт — CMS не требуется</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </label>-->
+
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; ── ШАГ 3 ── &ndash;&gt;-->
+<!--    <div class="configurator__step" data-step="3">-->
+<!--      <h3 class="configurator__question">Нужно ли продвижение в Google и Яндекс?</h3>-->
+<!--      <div class="configurator__options configurator__options&#45;&#45;two">-->
+
+<!--        <label class="cfg-option">-->
+<!--          <input type="radio" name="step3" value="yes" class="cfg-option__input">-->
+<!--          <div class="cfg-option__card">-->
+<!--            <div class="cfg-option__icon">-->
+<!--              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">-->
+<!--                <circle cx="18" cy="18" r="11" stroke="currentColor" stroke-width="2" fill="none"/>-->
+<!--                <line x1="26" y1="26" x2="35" y2="35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>-->
+<!--                <line x1="18" y1="11" x2="18" y2="25" stroke="currentColor" stroke-width="1.5"/>-->
+<!--                <line x1="11" y1="18" x2="25" y2="18" stroke="currentColor" stroke-width="1.5"/>-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <div class="cfg-option__text">-->
+<!--              <strong>Да, хочу клиентов из поиска</strong>-->
+<!--              <span>Настроим SEO, Schema.org и sitemap с первого дня</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </label>-->
+
+<!--        <label class="cfg-option">-->
+<!--          <input type="radio" name="step3" value="no" class="cfg-option__input">-->
+<!--          <div class="cfg-option__card">-->
+<!--            <div class="cfg-option__icon">-->
+<!--              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">-->
+<!--                <path d="M8 20 L16 28 L32 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <div class="cfg-option__text">-->
+<!--              <strong>Пока не нужно</strong>-->
+<!--              <span>Сосредоточимся на дизайне и структуре сайта</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </label>-->
+
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; ── РЕЗУЛЬТАТ ── &ndash;&gt;-->
+<!--    <div class="configurator__step configurator__result" data-step="result" id="cfgResult">-->
+<!--      <div class="cfg-result__icon">✓</div>-->
+<!--      <h3 class="cfg-result__title" id="cfgResultTitle"></h3>-->
+<!--      <p class="cfg-result__desc" id="cfgResultDesc"></p>-->
+<!--      <ul class="cfg-result__list" id="cfgResultList"></ul>-->
+<!--      <a href="#contacts" class="hero__button cfg-result__btn" id="cfgResultBtn">-->
+<!--        Оставить заявку-->
+<!--      </a>-->
+<!--      <button class="cfg-reset" id="cfgReset">← Ответить заново</button>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Навигация &ndash;&gt;-->
+<!--    <div class="configurator__nav" id="cfgNav">-->
+<!--      <button class="cfg-btn cfg-btn&#45;&#45;back" id="cfgBack">-->
+<!--        ← Назад-->
+<!--      </button>-->
+<!--      <button class="cfg-btn cfg-btn&#45;&#45;next" id="cfgNext" disabled>-->
+<!--        Далее →-->
+<!--      </button>-->
+<!--    </div>-->
+<!--    </div>-->
+
+<!--  </div>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; ═══════════════════════════════════════════════════════════-->
+<!--     CONTACTS — полная секция с формой и EmailJS-->
+<!--     Заменяет твою секцию contacts целиком-->
+<!--════════════════════════════════════════════════════════════ &ndash;&gt;-->
+<!--&lt;!&ndash; MODAL — форма из конфигуратора &ndash;&gt;-->
+<!--<div class="cfg-modal" id="cfgModal" role="dialog" aria-modal="true" aria-label="Оставить заявку">-->
+<!--  <div class="cfg-modal__overlay" id="cfgModalOverlay"></div>-->
+<!--  <div class="cfg-modal__window">-->
+
+<!--    <button class="cfg-modal__close" id="cfgModalClose" aria-label="Закрыть">-->
+<!--      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">-->
+<!--        <line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>-->
+<!--        <line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>-->
+<!--      </svg>-->
+<!--    </button>-->
+
+<!--    &lt;!&ndash; Используем те же классы что и в секции contacts &ndash;&gt;-->
+<!--    <div class="contacts__form-card">-->
+
+<!--      <h3 class="contacts__form-title">Оставить заявку</h3>-->
+
+<!--      &lt;!&ndash; Итог конфигуратора показывается над формой &ndash;&gt;-->
+<!--      <div class="cfg-modal__summary" id="cfgModalSummary"></div>-->
+
+<!--      <form class="contacts__form" id="modalContactForm" novalidate>-->
+
+<!--        <input type="hidden" id="modal-cfg-result" name="cfg_result" value="">-->
+
+<!--        <div class="contacts__field">-->
+<!--          <input type="text" id="modal-name" name="from_name"-->
+<!--                 class="contacts__input" placeholder=" " required autocomplete="name"/>-->
+<!--          <label for="modal-name">Ваше имя *</label>-->
+<!--        </div>-->
+
+<!--        <div class="contacts__field">-->
+<!--          <input type="tel" id="modal-phone" name="from_phone"-->
+<!--                 class="contacts__input" placeholder=" " required autocomplete="tel"/>-->
+<!--          <label for="modal-phone">Телефон *</label>-->
+<!--        </div>-->
+
+<!--        <div class="contacts__field">-->
+<!--          <textarea id="modal-message" name="message"-->
+<!--                    class="contacts__input contacts__textarea" placeholder=" " rows="3"></textarea>-->
+<!--          <label for="modal-message">Комментарий</label>-->
+<!--        </div>-->
+
+<!--        <button type="submit" class="contacts__submit" id="modalSubmit">-->
+<!--          Отправить заявку-->
+<!--        </button>-->
+
+<!--        <p class="contacts__status" id="modalStatus" aria-live="polite"></p>-->
+
+<!--      </form>-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<section class="contacts" id="contacts">-->
+
+<!--  &lt;!&ndash; Левая колонка: info + форма &ndash;&gt;-->
+<!--  <div class="contacts__wrap">-->
+
+<!--    <div class="contacts__info">-->
+<!--      <div class="contacts__content">-->
+
+<!--        <h2 class="contacts__title">Обсудим ваш проект</h2>-->
+
+<!--        <div class="contacts__group">-->
+<!--          <a href="tel:+375000000000" class="contacts__link">+375 (00) 000-00-00</a>-->
+<!--          <a href="mailto:hello@ai2b.by" class="contacts__link">hello@ai2b.by</a>-->
+<!--        </div>-->
+
+<!--        <p class="contacts__address">Беларусь, работаем удалённо по всей стране</p>-->
+
+<!--        <div class="contacts__socials">-->
+<!--          <a href="#" class="contacts__social">-->
+<!--            <svg role="presentation" width="30px" height="30px" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--              <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50Zm21.977-68.056c.386-4.38-4.24-2.576-4.24-2.576-3.415 1.414-6.937 2.85-10.497 4.302-11.04 4.503-22.444 9.155-32.159 13.734-5.268 1.932-2.184 3.864-2.184 3.864l8.351 2.577c3.855 1.16 5.91-.129 5.91-.129l17.988-12.238c6.424-4.38 4.882-.773 3.34.773l-13.49 12.882c-2.056 1.804-1.028 3.35-.129 4.123 2.55 2.249 8.82 6.364 11.557 8.16.712.467 1.185.778 1.292.858.642.515 4.111 2.834 6.424 2.319 2.313-.516 2.57-3.479 2.57-3.479l3.083-20.226c.462-3.511.993-6.886 1.417-9.582.4-2.546.705-4.485.767-5.362Z" fill="#000000"/>-->
+<!--            </svg>-->
+<!--          </a>-->
+<!--          <a href="#" class="contacts__social">-->
+<!--            <svg role="presentation" width="30px" height="30px" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--              <circle cx="50" cy="50" r="50" fill="#000000"/>-->
+<!--              <path d="M30 28L40 28L50 62L60 28L70 28L56 72L44 72L30 28Z" fill="white"/>-->
+<!--            </svg>-->
+<!--          </a>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Форма &ndash;&gt;-->
+<!--    <div class="contacts__form-wrap">-->
+<!--      <div class="contacts__form-inner">-->
+<!--        <div class="contacts__form-card">-->
+
+<!--          <h3 class="contacts__form-title">Оставить заявку</h3>-->
+
+<!--          <form class="contacts__form" id="contactForm" novalidate>-->
+
+<!--            &lt;!&ndash; Скрытое поле: результат конфигуратора &ndash;&gt;-->
+<!--            &lt;!&ndash; Заполняется автоматически если клиент прошёл конфигуратор &ndash;&gt;-->
+<!--            <input-->
+<!--                type="hidden"-->
+<!--                id="cfg-result-hidden"-->
+<!--                name="cfg_result"-->
+<!--                value=""-->
+<!--            />-->
+
+<!--            <div class="contacts__field">-->
+<!--              <input-->
+<!--                  type="text"-->
+<!--                  id="form-name"-->
+<!--                  name="from_name"-->
+<!--                  class="contacts__input"-->
+<!--                  placeholder=" "-->
+<!--                  required-->
+<!--                  autocomplete="name"-->
+<!--              />-->
+<!--              <label for="form-name">Ваше имя *</label>-->
+<!--            </div>-->
+
+<!--            <div class="contacts__field">-->
+<!--              <input-->
+<!--                  type="tel"-->
+<!--                  id="form-phone"-->
+<!--                  name="from_phone"-->
+<!--                  class="contacts__input"-->
+<!--                  placeholder=" "-->
+<!--                  required-->
+<!--                  autocomplete="tel"-->
+<!--              />-->
+<!--              <label for="form-phone">Телефон *</label>-->
+<!--            </div>-->
+
+<!--            <div class="contacts__field">-->
+<!--              <textarea-->
+<!--                  id="form-message"-->
+<!--                  name="message"-->
+<!--                  class="contacts__input contacts__textarea"-->
+<!--                  placeholder=" "-->
+<!--                  rows="4"-->
+<!--              ></textarea>-->
+<!--              <label for="form-message">Кратко о проекте</label>-->
+<!--            </div>-->
+
+<!--            <button type="submit" class="contacts__submit" id="formSubmit">-->
+<!--              Отправить заявку-->
+<!--            </button>-->
+
+<!--            <p class="contacts__status" id="formStatus" aria-live="polite"></p>-->
+
+<!--          </form>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Правая колонка: карта &ndash;&gt;-->
+<!--  <div class="contacts__map">-->
+
+<!--    <div class="contacts__map-overlay">-->
+<!--      <div class="contacts__map-hint">-->
+<!--        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"-->
+<!--             stroke="currentColor" stroke-width="2" aria-hidden="true">-->
+<!--          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>-->
+<!--          <circle cx="12" cy="9" r="2.5"/>-->
+<!--        </svg>-->
+<!--        <span>г. Минск, пр. Независимости, д. 68-2, к.108</span>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <a href="https://yandex.by/maps/?rtext=~53.921621,27.600243&rtt=auto"-->
+<!--       target="_blank" rel="noopener" class="contacts__map-route">-->
+<!--      Построить маршрут-->
+<!--    </a>-->
+
+<!--    <iframe-->
+<!--        data-src="https://yandex.ru/map-widget/v1/?ll=27.600281%2C53.921440&z=17&pt=27.600243,53.921621,pm2orgm"-->
+<!--        width="100%"-->
+<!--        height="100%"-->
+<!--        frameborder="0"-->
+<!--        allowfullscreen="true"-->
+<!--        loading="lazy"-->
+<!--        class="js-lazy-iframe">-->
+<!--    </iframe>-->
+
+<!--  </div>-->
+
+<!--</section>-->
+<!--<script type="module" src="script/config.js"></script>-->
+<!--<script type="module" src="script/contact-form.js"></script>-->
+<!--<script type="module" src="script/configurator.js"></script>-->
+<!--<script type="module" src="script/hero-motion.js"></script>-->
+<!--<footer class="site-footer">-->
+<!--  <p>© 2026 ai2b.by — IMC COMPUTERS LTD</p>-->
+<!--</footer>-->
 </body>
 </html>

@@ -1,0 +1,37 @@
+
+/* ==========================================================================
+   RESET & BASE
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-light);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+p {
+  font-weight: var(--font-weight-light);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

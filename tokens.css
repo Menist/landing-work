@@ -1,0 +1,92 @@
+/* ==========================================================================
+   DESIGN TOKENS — единый источник правды для всего проекта
+   Меняйте значения здесь, изменения применятся везде автоматически
+   ========================================================================== */
+
+:root {
+  /* ── Цвета ── */
+  --color-accent: #ffbe49;
+  --color-accent-hover: #dfa63e;
+
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5f5f5;
+  --color-bg-tertiary: #f0f0f0;
+
+  --color-text-primary: #000000;
+  --color-text-secondary: #333333;
+
+  --color-white: #ffffff;
+  --color-overlay-dark: rgba(0, 0, 0, 0.35);
+  --color-overlay-map: rgba(0, 0, 0, 0.5);
+  --color-divider: #d9d9d9;
+
+  --color-hero-nav-hover: #ffbe49; /* совпадает с accent — оставлено явно для читаемости */
+
+  /* ── Типографика ── */
+  --font-family-base: 'Open Sans', Arial, sans-serif;
+
+  --font-weight-light: 300;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-xs: 14px;
+  --font-size-sm: 15px;
+  --font-size-base: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 22px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 30px;
+  --font-size-3xl: 42px;
+
+  --line-height-tight: 1.28;
+  --line-height-normal: 1.35;
+  --line-height-relaxed: 1.5;
+  --line-height-loose: 1.7;
+
+  /* ── Пространство (spacing scale) ── */
+  --space-xs: 10px;
+  --space-sm: 18px;
+  --space-md: 25px;
+  --space-lg: 36px;
+  --space-xl: 60px;
+  --space-2xl: 90px;
+  --space-3xl: 105px;
+  --space-4xl: 150px;
+
+  /* ── Радиус скруглений ── */
+  --radius-sm: 12px;
+  --radius-lg: 30px;
+  --radius-full: 999px;
+  --radius-circle: 50%;
+
+  /* ── Тени ── */
+  --shadow-card: 0 0 20px rgba(0, 0, 0, 0.1);
+
+  /* ── Переходы ── */
+  --transition-base: 0.3s ease;
+  --transition-transform: transform var(--transition-base);
+  --transition-opacity: opacity var(--transition-base);
+  --transition-color: color var(--transition-base);
+  --transition-bg: background-color var(--transition-base);
+
+  /* ── Контейнеры ── */
+  --container-sm: 900px;
+  --container-md: 1180px;
+  --container-lg: 1200px;
+  --container-xl: 1320px;
+
+  /* ── Точки перехода ── */
+  /* xs (tiny):  360px  — подстраховка для старых узких устройств */
+  /* mobile:     576px  — смартфоны в портретной ориентации       */
+  /* tablet:     768px  — планшеты portrait (новый breakpoint)    */
+  /* tablet-lg:  992px  — планшеты landscape / небольшие ноутбуки */
+  /* desktop:   1100px  — только для pricing (flex-wrap)          */
+
+  /* ── Touch targets (WCAG 2.5.5) ── */
+  --touch-target-min: 44px;
+
+  /* ── Иконки / аватары ── */
+  --icon-size-sm: 70px;
+  --icon-size-md: 80px;
+  --icon-size-lg: 96px;
+}
