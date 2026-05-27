@@ -1,4 +1,3 @@
-@import url("main-old.css");
 @import url("reset.css");
 @import url("utils.css");
 @import url("tokens.css");
@@ -51,7 +50,7 @@
     radial-gradient(circle at 18% 18%, rgba(255, 196, 92, 0.2), transparent 24%),
     radial-gradient(circle at 82% 24%, rgba(255, 255, 255, 0.09), transparent 18%),
     linear-gradient(108deg, rgba(8, 10, 14, 0.92) 0%, rgba(10, 13, 18, 0.8) 46%, rgba(10, 13, 18, 0.36) 100%);
-  transform: translate3d(0, var(--hero-glow-shift-y), 0) scale(1.02);
+  transform: translate3d(0, var(--hero-glow-shift-y), 0) scale(1.03);
   transform-origin: center center;
   z-index: 0;
 }
@@ -768,13 +767,21 @@
 
 .services {
   position: relative;
-  background: #f4efe6;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+      radial-gradient(circle at 12% 18%, rgba(201,163,92,.10), transparent 26%),
+      radial-gradient(circle at 68% 22%, rgba(55,90,140,.16), transparent 32%),
+      linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.08)),
+      #10151c;
 }
 .services__container{
   max-width: 1360px;
   padding: 24px 40px 30px;
   width: 100%;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 .services::before,
 .services::after {
@@ -782,36 +789,62 @@
   position: absolute;
   pointer-events: none;
 }
+.services__container::before {
+  content: "";
+  position: absolute;
+  inset: -80px;
 
-.services::before {
-  inset: 0 0 auto;
-  height: 150px;
   background:
-    linear-gradient(180deg, rgba(255, 196, 92, 0.04), rgba(255, 196, 92, 0)),
-    linear-gradient(180deg, rgba(9, 12, 16, 0.86), rgba(9, 12, 16, 0));
+      radial-gradient(
+          circle at top left,
+          rgba(201,163,92,.08),
+          transparent 32%
+      ),
+      radial-gradient(
+          circle at top right,
+          rgba(61,90,128,.12),
+          transparent 38%
+      );
+
+  filter: blur(52px);
+  opacity: .55;
+  z-index: -1;
+  pointer-events: none;
+}
+.services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .035;
+  pointer-events: none;
+  background-image:
+      radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size: 3px 3px;
 }
 
 .services::after {
-  top: 108px;
-  /*right: -140px;*/
-  width: 340px;
-  height: 340px;
+  top: 86px;
+  right: -120px;
+  width: 520px;
+  height: 520px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(240, 187, 90, 0.08), rgba(240, 187, 90, 0));
-  opacity: 0.4;
-}
-
-.services .container {
-  position: relative;
-  z-index: 1;
+  background: radial-gradient(circle, rgba(240, 187, 90, 0.14), rgba(240, 187, 90, 0) 70%);
+  opacity: 0.42;
+  filter: blur(10px);
 }
 
 .services__shell {
   position: relative;
   padding: 34px 34px 36px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 34px;
-  background: linear-gradient(180deg, rgba(20, 25, 33, 0.96), rgba(24, 31, 40, 0.94));
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 32px;
+  background:
+    linear-gradient(180deg, rgba(21, 27, 35, 0.97) 0%, rgba(24, 31, 40, 0.965) 38%, rgba(29, 36, 45, 0.95) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.03),
+    0 30px 76px rgba(8, 11, 15, 0.26),
+    0 52px 120px rgba(8, 11, 15, 0.18);
 }
 
 .services__shell::before {
@@ -820,9 +853,23 @@
   inset: 0;
   border-radius: inherit;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0) 44%),
-    radial-gradient(circle at top right, rgba(240, 187, 90, 0.08), transparent 26%);
+    linear-gradient(135deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0) 42%),
+    radial-gradient(circle at top right, rgba(240, 187, 90, 0.1), transparent 28%),
+    radial-gradient(circle at left center, rgba(255, 255, 255, 0.05), transparent 24%),
+    linear-gradient(180deg, rgba(8, 10, 14, 0) 0%, rgba(8, 10, 14, 0.08) 100%);
   pointer-events: none;
+}
+
+.services__shell::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0) 26%),
+    radial-gradient(circle at 14% 0%, rgba(255, 255, 255, 0.06), transparent 22%);
+  pointer-events: none;
+  opacity: 0.9;
 }
 
 .services__header,
@@ -838,39 +885,23 @@
   text-align: left;
 }
 
-.services__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  min-height: 40px;
-  margin: 0 0 16px;
-  padding: 0 15px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 999px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72);
-}
-
 .services__title {
   margin: 0 0 14px;
   font-size: clamp(2.45rem, 4vw, 4rem);
   font-weight: 700;
-  line-height: 0.96;
-  letter-spacing: -0.05em;
-  color: #fbf7ef;
+  color: rgba(244,241,236,.92);
+  text-shadow: 0 2px 18px rgba(0,0,0,.22);
+  letter-spacing: -0.04em;
+  line-height: .9;
 }
 
 .services__subtitle {
-  max-width: 50ch;
+  max-width: 61ch;
   margin: 0;
   font-size: clamp(1rem, 1.2vw, 1.12rem);
   font-weight: 400;
-  line-height: 1.68;
-  color: rgba(244, 241, 236, 0.78);
+  color: rgba(244,241,236,.72);
+  line-height: 1.6;
 }
 
 .services__grid {
@@ -881,17 +912,19 @@
 
 .service-card {
   display: grid;
+  overflow: hidden;
   align-content: start;
   gap: 22px;
   min-width: 0;
   min-height: 100%;
   padding: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 30px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.025));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.028));
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.025),
     0 16px 40px rgba(8, 11, 15, 0.16);
   text-align: left;
   transition:
@@ -906,7 +939,9 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(145deg, rgba(240, 187, 90, 0.05), rgba(240, 187, 90, 0) 44%);
+  background:
+    linear-gradient(145deg, rgba(240, 187, 90, 0.065), rgba(240, 187, 90, 0) 46%),
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.055), transparent 34%);
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
@@ -914,9 +949,10 @@
 
 .service-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(240, 187, 90, 0.2);
+  border-color: rgba(240, 187, 90, 0.24);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.03),
     0 22px 48px rgba(8, 11, 15, 0.2);
 }
 
@@ -928,7 +964,25 @@
   position: relative;
   z-index: 1;
 }
+.service-card--primary .service-card__btn {
+  box-shadow:
+      0 10px 28px rgba(240,187,90,.16),
+      0 4px 10px rgba(0,0,0,.14);
+}
+.service-card:not(.service-card--primary) {
+  border-color: rgba(255,255,255,0.06);
 
+  background:
+      linear-gradient(
+          180deg,
+          rgba(255,255,255,0.055),
+          rgba(255,255,255,0.024)
+      );
+
+  box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.04),
+      0 14px 34px rgba(5,8,12,.18);
+}
 .service-card__icon {
   width: 78px;
   height: 78px;
@@ -942,6 +996,20 @@
     linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
+.service-card__icon--primary {
+  border-color: rgba(240,187,90,0.26);
+
+  background:
+      linear-gradient(
+          180deg,
+          rgba(255,255,255,0.09),
+          rgba(255,255,255,0.03)
+      );
+
+  box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.08),
+      0 0 22px rgba(240,187,90,0.08);
+}
 
 .service-card__icon svg {
   width: 42px;
@@ -954,19 +1022,28 @@
 }
 
 .service-card__title {
+  position: relative;
+  z-index: 2;
+
   margin: 0;
   font-size: clamp(1.75rem, 2.1vw, 2.1rem);
   font-weight: 700;
   line-height: 1.04;
   letter-spacing: -0.045em;
-  color: #fcf8f0;
+
+  color: rgba(252,248,240,.96);
+
+  text-shadow:
+      0 1px 2px rgba(0,0,0,.18);
+
+  transition: none;
 }
 
 .service-card__for {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.58;
-  color: rgba(244, 241, 236, 0.76);
+  color: rgba(244,241,236,.72);
 }
 
 .service-card__label {
@@ -976,12 +1053,12 @@
 
 .service-card__list {
   display: grid;
-  gap: 14px;
+  gap: 18px;
   margin: 0;
   padding: 22px 0;
   list-style: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255,255,255,.05);
+  border-bottom: 1px solid rgba(255,255,255,.05);
   text-align: left;
 }
 
@@ -990,7 +1067,7 @@
   padding-left: 24px;
   font-size: 0.95rem;
   line-height: 1.62;
-  color: rgba(244, 241, 236, 0.82);
+  color: rgba(244,241,236,.72);
 }
 
 .service-card__list li::before {
@@ -1001,15 +1078,16 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #f0bb5a;
-  box-shadow: 0 0 0 4px rgba(240, 187, 90, 0.1);
+  background: rgba(240,187,90,.92);
+  box-shadow: 0 0 8px rgba(201,163,92,.22);
 }
 
 .service-card__footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 18px;
+  margin-top: 4px;
 }
 
 .service-card__term {
@@ -1023,47 +1101,70 @@
 }
 
 .service-card__btn {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 220px;
   min-height: 54px;
-  margin: 0;
-  padding: 0 24px;
-  border: 1px solid rgba(255, 196, 92, 0.52);
+  margin-top: 8px;
+  padding: 0 28px;
+  border: 1px solid rgba(255, 196, 92, 0.35);
   border-radius: 999px;
-  background: linear-gradient(180deg, #ffd17a 0%, #efb854 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34), 0 16px 34px rgba(236, 181, 86, 0.16);
+   background:  linear-gradient(
+      180deg,
+      #f1cf70 0%,
+      #ddb24a 100%
+  );
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.02);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #11161d;
+  color: #1e2329;
   transition:
-    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    background 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.3s ease,
+      background 0.3s ease;
 }
 
 .service-card__btn:hover {
-  background: linear-gradient(180deg, #ffda92 0%, #f3c165 100%);
-  color: #11161d;
+  background:
+      linear-gradient(
+          180deg,
+          #f5db96 0%,
+          #e5bf6d 100%
+      );
   transform: translateY(-2px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42), 0 20px 40px rgba(236, 181, 86, 0.22);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .service-card__btn:active {
-  transform: translateY(0) scale(0.985);
+  transform: translateY(0) scale(0.98);
 }
-
 .service-card__design-note {
   margin: -4px 0 0;
   font-size: 0.82rem;
   line-height: 1.58;
-  color: rgba(244, 241, 236, 0.6);
+  color: rgba(244, 241, 236);
   text-align: left;
 }
+.service-card__btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
 
+  background:
+      linear-gradient(
+          120deg,
+          rgba(255,255,255,0.18),
+          transparent 42%
+      );
+
+  opacity: 0.22;
+  pointer-events: none;
+}
 @media (max-width: 1180px) {
   .services__shell {
     padding: 28px;
@@ -1092,7 +1193,8 @@
 @media (max-width: 860px) {
   .services {
     background:
-      linear-gradient(180deg, #11161d 0%, #171d25 10%, #ece6db 10.01%, #f4efe6 100%);
+      radial-gradient(circle at 50% -4%, rgba(255, 209, 122, 0.08), transparent 24%),
+      linear-gradient(180deg, #0d1218 0%, #171d25 16%, #54514b 34%, #cfc5b8 52%, #ece6db 68%, #f4efe6 100%);
   }
 
   .services__shell {
@@ -1127,12 +1229,6 @@
 
   .services__header {
     margin-bottom: 20px;
-  }
-
-  .services__eyebrow {
-    min-height: 38px;
-    margin-bottom: 14px;
-    padding: 0 14px;
   }
 
   .service-card {
