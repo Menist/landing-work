@@ -403,8 +403,12 @@
     if (!section) return;
 
     const titleEl  = section.querySelector(".about__title");
-    const imgWrap  = section.querySelector(".about__image-wrapper");
+    const visual   = section.querySelector(".about__visual");
     const content  = section.querySelector(".about__content");
+
+    section.querySelectorAll(".about__metric").forEach((item, i) =>
+      item.style.setProperty("--i", i)
+    );
 
     if (titleEl) {
       splitWords(titleEl);
@@ -413,7 +417,7 @@
       );
     }
 
-    if (imgWrap)  onVisible(imgWrap,  el => el.classList.add("is-visible"), 0.1);
+    if (visual)   onVisible(visual,   el => el.classList.add("is-visible"), 0.1);
     if (content)  onVisible(content,  el => el.classList.add("is-visible"), 0.1);
   }
 
