@@ -305,192 +305,162 @@
      ADVANTAGES — Наши преимущества
      Используем секцию pricing как основу — структура та же
 ════════════════════════════════════════════════════════════ -->
-<section class="pricing section--padded" id="advantages">
+<section class="advantages" id="advantages" aria-labelledby="advantages-title">
+  <header class="advantages__header">
+    <h2 class="advantages__title" id="advantages-title">
+      Инфраструктура, которая работает на бизнес
+    </h2>
 
-  <div class="pricing__container">
+    <p class="advantages__lead">
+      Каждый сайт включает невидимые слои, которые помогают ему находиться в поиске,
+      быстро загружаться, собирать заявки и оставаться удобным в управлении после запуска.
+    </p>
+  </header>
 
-    <div class="pricing__header">
-      <h2 class="pricing__title">
-        Сайт, который работает на результат
-      </h2>
-      <p class="pricing__subtitle">
-        Продумываем не только дизайн, но и всё, что влияет на привлечение клиентов, скорость работы и дальнейшее развитие проекта.
-      </p>
+  <div class="advantages__infrastructure" aria-label="Инфраструктура сайта">
+    <div class="advantages__spine" aria-hidden="true">
+      <span class="advantages__spine-label"></span>
     </div>
 
-    <div class="pricing__cards">
+    <ol class="advantages__layers">
+      <li class="advantages__layer advantages__layer--left advantages__layer--search">
+        <article class="advantages__layer-body">
+          <header class="advantages__layer-header">
+            <h3 class="advantages__layer-title">Видимость в поиске</h3>
+            <p class="advantages__layer-description">
+              Сайт подготовлен так, чтобы поисковые системы могли корректно читать,
+              индексировать и понимать его структуру.
+            </p>
+          </header>
 
-      <article class="pricing-card">
-        <h3 class="pricing-card__title">SEO-продвижение</h3>
-        <div class="pricing-card__price">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="16" stroke="#ffbe49" stroke-width="2.5" fill="none"/>
-            <line x1="35" y1="35" x2="50" y2="50" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="24" y1="16" x2="24" y2="32" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>
-            <line x1="16" y1="24" x2="32" y2="24" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <ul class="pricing-card__list">
-          <li class="pricing-card__item">Видимость в Google и Яндекс с первого дня</li>
-          <li class="pricing-card__item">Prerendering — поисковики получают готовый HTML</li>
-          <li class="pricing-card__item">Schema.org разметка для бизнеса</li>
-          <li class="pricing-card__item">Sitemap и robots.txt</li>
-        </ul>
-        <p class="pricing-card__option">Доступно как отдельная опция</p>
-      </article>
+          <ul class="advantages__feature-list" aria-label="Что входит в видимость в поиске">
+            <li class="advantages__feature">Видимость в Google и Яндексе</li>
+            <li class="advantages__feature">Пререндеринг страниц</li>
+            <li class="advantages__feature">Разметка Schema.org</li>
+            <li class="advantages__feature">Карта сайта</li>
+          </ul>
+        </article>
+      </li>
 
-      <article class="pricing-card">
-        <h3 class="pricing-card__title">Скорость и надёжность</h3>
-        <div class="pricing-card__price">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="28" cy="28" r="22" stroke="#ffbe49" stroke-width="2.5" fill="none"/>
-            <polyline points="18,36 24,28 30,32 38,20" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <line x1="28" y1="12" x2="28" y2="16" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>
-            <line x1="12" y1="28" x2="16" y2="28" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>
-            <line x1="44" y1="28" x2="40" y2="28" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <ul class="pricing-card__list">
-          <li class="pricing-card__item">PageSpeed 92/100 на мобильных</li>
-          <li class="pricing-card__item">Загрузка менее 1 секунды</li>
-          <li class="pricing-card__item">HTTPS и защитные заголовки безопасности</li>
-          <li class="pricing-card__item">Современный стек: React, TypeScript, headless CMS</li>
-        </ul>
-        <a href="#contacts" class="pricing-card__button">
-          Обсудить проект
-        </a>
-      </article>
+      <li class="advantages__layer advantages__layer--right advantages__layer--performance">
+        <article class="advantages__layer-body">
+          <header class="advantages__layer-header">
+            <h3 class="advantages__layer-title">Производительность сайта</h3>
+            <p class="advantages__layer-description">
+              Сайт оптимизирован для быстрой загрузки, стабильной работы и доверия
+              с первого запроса.
+            </p>
+          </header>
 
-      <article class="pricing-card">
-        <h3 class="pricing-card__title">Удобное управление</h3>
-        <div class="pricing-card__price">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="10" width="40" height="28" rx="3" stroke="#ffbe49" stroke-width="2.5" fill="none"/>
-            <line x1="8" y1="22" x2="48" y2="22" stroke="#ffbe49" stroke-width="2"/>
-            <line x1="20" y1="38" x2="36" y2="38" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="28" y1="38" x2="28" y2="46" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="18" y1="46" x2="38" y2="46" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="16" y1="30" x2="28" y2="30" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>
-            <line x1="16" y1="34" x2="24" y2="34" stroke="#ffbe49" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="38" cy="32" r="4" stroke="#ffbe49" stroke-width="2" fill="none"/>
-          </svg>
-        </div>
-        <ul class="pricing-card__list">
-          <li class="pricing-card__item">CMS — меняете контент сами, без разработчика</li>
-          <li class="pricing-card__item">Google Analytics и Яндекс.Метрика</li>
-          <li class="pricing-card__item">Отслеживание действий клиентов на сайте</li>
-          <li class="pricing-card__item">Понимаете откуда приходят заявки</li>
-        </ul>
-        <a href="#contacts" class="pricing-card__button">
-          Обсудить проект
-        </a>
-      </article>
+          <ul class="advantages__feature-list" aria-label="Что входит в техническую скорость">
+            <li class="advantages__feature">Быстрая загрузка</li>
+            <li class="advantages__feature">Высокий PageSpeed</li>
+            <li class="advantages__feature">HTTPS</li>
+            <li class="advantages__feature">Современный стек</li>
+          </ul>
+        </article>
+      </li>
 
-    </div>
+      <li class="advantages__layer advantages__layer--left advantages__layer--management">
+        <article class="advantages__layer-body">
+          <header class="advantages__layer-header">
+            <h3 class="advantages__layer-title">Управление контентом</h3>
+            <p class="advantages__layer-description">
+              Контент, заявки и статистика остаются под вашим контролем после запуска.
+            </p>
+          </header>
 
+          <ul class="advantages__feature-list" aria-label="Что входит в управление контентом">
+            <li class="advantages__feature">CMS</li>
+            <li class="advantages__feature">Аналитика</li>
+            <li class="advantages__feature">Отслеживание заявок</li>
+            <li class="advantages__feature">Простое обновление контента</li>
+          </ul>
+        </article>
+      </li>
+    </ol>
   </div>
 
+  <footer class="advantages__footer">
+    <p class="advantages__closing">
+      Сайт работает не только в день запуска, но и спустя месяцы после него.
+    </p>
+  </footer>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     HOW WE WORK — Как мы работаем
+     HOW WE WORK — architectural process register
 ════════════════════════════════════════════════════════════ -->
-<section class="work section--padded" id="how">
-
+<section class="work" id="how" aria-labelledby="work-title">
   <div class="work__container">
-
-    <div class="work__header">
-      <h2 class="work__title">
-        Как мы работаем
+    <header class="work__header">
+      <h2 class="work__title" id="work-title">
+        From first conversation to a calm public launch.
       </h2>
+      <p class="work__lead">
+        The project moves through clear approvals: structure, visual direction,
+        development, and transfer. Each stage leaves a finished artifact, not a vague promise.
+      </p>
+    </header>
+
+    <div class="work__register" aria-label="Website production stages">
+      <ol class="work__sequence">
+        <li class="work__step work__step--wide">
+          <article class="work__panel">
+            <div class="work__index" aria-hidden="true">01</div>
+            <div class="work__body">
+              <h3 class="work__step-title">Discussion</h3>
+              <ul class="work__points">
+                <li class="work__point">We identify business goals, target audience and design expectations.</li>
+                <li class="work__point">We define the website structure and page hierarchy.</li>
+                <li class="work__point">We agree on timeline and budget.</li>
+              </ul>
+            </div>
+          </article>
+        </li>
+
+        <li class="work__step work__step--offset">
+          <article class="work__panel">
+            <div class="work__index" aria-hidden="true">02</div>
+            <div class="work__body">
+              <h3 class="work__step-title">Prototype &amp; Design</h3>
+              <ul class="work__points">
+                <li class="work__point">We work with an existing design or create one from scratch.</li>
+                <li class="work__point">All design decisions are approved before development begins.</li>
+              </ul>
+            </div>
+          </article>
+        </li>
+
+        <li class="work__step work__step--wide work__step--development">
+          <article class="work__panel">
+            <div class="work__index" aria-hidden="true">03</div>
+            <div class="work__body">
+              <h3 class="work__step-title">Development</h3>
+              <ul class="work__points">
+                <li class="work__point">We build and program the website.</li>
+                <li class="work__point">We configure CMS, analytics and SEO.</li>
+                <li class="work__point">We test the project across modern browsers and devices.</li>
+              </ul>
+            </div>
+          </article>
+        </li>
+
+        <li class="work__step work__step--offset work__step--launch">
+          <article class="work__panel">
+            <div class="work__index" aria-hidden="true">04</div>
+            <div class="work__body">
+              <h3 class="work__step-title">Launch</h3>
+              <ul class="work__points">
+                <li class="work__point">We deploy the website.</li>
+                <li class="work__point">We configure hosting, domain and HTTPS.</li>
+                <li class="work__point">We transfer the project and provide CMS training.</li>
+              </ul>
+            </div>
+          </article>
+        </li>
+      </ol>
     </div>
-
-    <div class="work__timeline">
-
-      <article class="work__item">
-        <div class="work__left">
-          <div class="work__icon">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="40" cy="40" r="39" stroke="#ffbe49" stroke-width="2" fill="#fff"/>
-              <path d="M26 40h28M40 26v28" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="40" cy="40" r="6" fill="#ffbe49"/>
-            </svg>
-          </div>
-        </div>
-        <div class="work__content">
-          <h3 class="work__item-title">Обсуждение</h3>
-          <p class="work__text">
-            Выясняем задачи бизнеса, целевую аудиторию и пожелания
-            по дизайну. Определяем структуру сайта и список страниц.
-            Согласовываем сроки и стоимость.
-          </p>
-        </div>
-      </article>
-
-      <article class="work__item">
-        <div class="work__left">
-          <div class="work__icon">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="40" cy="40" r="39" stroke="#ffbe49" stroke-width="2" fill="#fff"/>
-              <rect x="24" y="28" width="32" height="24" rx="3" stroke="#ffbe49" stroke-width="2" fill="none"/>
-              <line x1="24" y1="36" x2="56" y2="36" stroke="#ffbe49" stroke-width="1.5"/>
-              <line x1="32" y1="44" x2="48" y2="44" stroke="#ffbe49" stroke-width="1.5"/>
-            </svg>
-          </div>
-        </div>
-        <div class="work__content">
-          <h3 class="work__item-title">Прототип и дизайн</h3>
-          <p class="work__text">
-            Работаем с вашим готовым макетом — или разрабатываем
-            дизайн с нуля совместно с дизайнером. Согласовываем
-            каждый этап до начала разработки.
-          </p>
-        </div>
-      </article>
-
-      <article class="work__item">
-        <div class="work__left">
-          <div class="work__icon">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="40" cy="40" r="39" stroke="#ffbe49" stroke-width="2" fill="#fff"/>
-              <polyline points="28,44 34,38 40,42 46,34 52,38" stroke="#ffbe49" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              <line x1="28" y1="48" x2="52" y2="48" stroke="#ffbe49" stroke-width="1.5"/>
-            </svg>
-          </div>
-        </div>
-        <div class="work__content">
-          <h3 class="work__item-title">Разработка</h3>
-          <p class="work__text">
-            Верстаем и программируем сайт. Настраиваем CMS для
-            управления контентом. При необходимости подключаем аналитику и SEO.
-            Тестируем во всех популярных браузерах.
-          </p>
-        </div>
-      </article>
-
-      <article class="work__item">
-        <div class="work__left">
-          <div class="work__icon">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="40" cy="40" r="39" stroke="#ffbe49" stroke-width="2" fill="#fff"/>
-              <polyline points="28,40 36,48 52,32" stroke="#ffbe49" stroke-width="2.5" stroke-linecap="round"
-                        stroke-linejoin="round" fill="none"/>
-            </svg>
-          </div>
-        </div>
-        <div class="work__content">
-          <h3 class="work__item-title">Запуск</h3>
-          <p class="work__text">
-            Размещаем сайт на хостинге, настраиваем домен и HTTPS.
-            Обучаем работе с CMS. Сайт готов принимать клиентов
-            из поисковых систем.
-          </p>
-        </div>
-      </article>
-
-    </div>
-
   </div>
 </section>
 
