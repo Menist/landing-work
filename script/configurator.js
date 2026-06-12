@@ -43,6 +43,39 @@
     </div>
   `;
   }
+  function getProgressBarHtml(stepIndex) {
+
+    if (stepIndex === 'finish') {
+      stepIndex = 2;
+    }
+
+    return `
+  <div class="configurator__progressbar">
+
+    <div class="configurator__progress-track">
+
+      <span class="configurator__progress-segment ${stepIndex >= 0 ? 'is-active' : ''}">
+      </span>
+
+      <span class="configurator__progress-segment ${stepIndex >= 1 ? 'is-active' : ''}">
+      </span>
+
+      <span class="configurator__progress-segment ${stepIndex >= 2 ? 'is-active' : ''}">
+      </span>
+
+    </div>
+
+    <span class="configurator__progress-label">
+      ${
+      stepIndex === 2
+        ? 'Готово'
+        : `Шаг ${stepIndex + 1} из 3`
+    }
+    </span>
+
+  </div>
+`;
+  }
   function getStepProgressHtml(stepIndex) {
 
     return `
@@ -261,9 +294,7 @@
     card.innerHTML = `
     <div class="configurator__card-content">
 
-      <span class="configurator__step">
-        Готово
-      </span>
+     ${getProgressBarHtml('finish')}
 
       <h3 class="configurator__card-title">
         Заявка отправлена
@@ -301,42 +332,61 @@
 `).join('');
 
     card.innerHTML = `
-    <div class="configurator__card-content">
+<div class="configurator__card-content">
 
-      <span class="configurator__step">
-      Готово
-      </span>
 
-    <h3 class="configurator__card-title">
-      Проверим, всё ли верно?
-    </h3>
-    <div class="configurator__progress">
-  ${tagsHtml}
-</div>
-<button
-  type="button"
-  class="configurator__edit"
-  data-edit-configurator
->
-  Изменить ответы
-</button>
-    <p class="configurator__helper">
-      Мы собрали параметры вашего проекта.
-      Нажмите кнопку ниже и оставьте контакты.
-    </p>
+  <span class="configurator__step">
+    Готово
+  </span>
 
-    <div class="configurator__actions">
-      <button
-        type="button"
-        class="configurator__next"
-        data-open-configurator-modal
-      >
-        Отправить заявку 
-      </button>
-    </div>
+
+  <h3 class="configurator__finish-title">
+    Ваш проект
+  </h3>
+
+
+  <div class="configurator__finish-label">
+    Проверьте параметры
+  </div>
+
+
+  <div class="configurator__finish-summary">
+    ${tagsHtml}
+  </div>
+
+
+  <p class="configurator__helper">
+    Мы собрали основные параметры проекта.
+    При необходимости вы можете изменить ответы перед отправкой.
+  </p>
+
+
+  <div class="configurator__finish-actions">
+
+
+    <button
+      type="button"
+      class="configurator__finish-edit"
+      data-edit-configurator
+    >
+      Изменить ответы
+    </button>
+
+
+    <button
+      type="button"
+      class="configurator__next"
+      data-open-configurator-modal
+    >
+      Отправить заявку
+    </button>
+
 
   </div>
-    `;
+
+
+</div>
+`;
 
     const button = card.querySelector(
       '[data-open-configurator-modal]'
@@ -412,9 +462,9 @@
 card.innerHTML = `
       <div class="configurator__card-content">
 
-      ${getStepProgressHtml(stepIndex)}
+    ${getProgressBarHtml(stepIndex)}
 
-    ${getSelectedTagsHtml()}
+${getSelectedTagsHtml()}
 
     <h3 class="configurator__card-title">
       ${question.title}
