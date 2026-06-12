@@ -1,206 +1,511 @@
-(function () {
+(() => {
   'use strict';
 
-  const RESULTS = {
-    'services-yes-yes': {
-      title: 'Сайт услуг с CMS и SEO',
-      desc: 'Оптимальное решение для компании сферы услуг. Клиенты найдут вас через Google и Яндекс, а вы сами будете управлять контентом.',
-      items: ['Многостраничный сайт (о нас, услуги, контакты)', 'Управление контентом через CMS', 'SEO-оптимизация с первого дня', 'Google Analytics и Яндекс.Метрика']
-    },
-    'services-yes-no': {
-      title: 'Сайт услуг с CMS',
-      desc: 'Красивый и удобный сайт с возможностью самостоятельно менять контент. SEO можно подключить позже.',
-      items: ['Многостраничный сайт', 'Управление контентом через CMS', 'Адаптивный дизайн', 'Готов к последующему SEO-продвижению (опционально)']
-    },
-    'services-no-yes': {
-      title: 'Сайт услуг с SEO',
-      desc: 'Профессиональный сайт компании, оптимизированный для поисковиков.',
-      items: ['Многостраничный сайт', 'SEO-оптимизация с первого дня', 'Schema.org разметка', 'Google Analytics и Яндекс.Метрика']
-    },
-    'services-no-no': {
-      title: 'Сайт услуг',
-      desc: 'Чистый и современный сайт для вашей компании.',
-      items: ['Многостраничный сайт', 'Адаптивный дизайн', 'Быстрая загрузка', 'HTTPS и защита']
-    },
-    'landing-yes-yes': {
-      title: 'Лендинг с CMS и SEO',
-      desc: 'Мощный одностраничник для продвижения вашей услуги.',
-      items: ['Одностраничный сайт с высокой конверсией', 'Управление контентом через CMS', 'SEO-оптимизация', 'Подключение аналитики']
-    },
-    'landing-yes-no': {
-      title: 'Лендинг с CMS',
-      desc: 'Продающий одностраничник с удобным управлением контентом.',
-      items: ['Одностраничный сайт', 'Управление контентом через CMS', 'Быстрая загрузка', 'Адаптивный дизайн']
-    },
-    'landing-no-yes': {
-      title: 'Лендинг с SEO',
-      desc: 'Продающий одностраничник, который находят в Google и Яндекс.',
-      items: ['Одностраничный сайт', 'SEO-оптимизация с первого дня', 'Высокая скорость загрузки', 'Аналитика и отслеживание заявок']
-    },
-    'landing-no-no': {
-      title: 'Лендинг',
-      desc: 'Быстрый и чёткий одностраничник для продвижения вашей услуги.',
-      items: ['Одностраничный сайт', 'Современный дизайн', 'Быстрая загрузка', 'Адаптивный под все устройства']
-    },
-    'card-yes-yes': {
-      title: 'Сайт-визитка с CMS и SEO',
-      desc: 'Простое и эффективное онлайн-присутствие.',
-      items: ['Контакты, адрес, часы работы', 'Управление контентом', 'SEO-оптимизация', 'Карта и ссылки на соцсети']
-    },
-    'card-yes-no': {
-      title: 'Сайт-визитка с CMS',
-      desc: 'Минимальное онлайн-присутствие с возможностью самому обновлять контакты.',
-      items: ['Контакты, адрес, часы работы', 'Управление контентом', 'Ссылки на соцсети', 'Адаптивный дизайн']
-    },
-    'card-no-yes': {
-      title: 'Сайт-визитка с SEO',
-      desc: 'Простой сайт с вашими контактами, который легко найти в поиске.',
-      items: ['Контакты, адрес, часы работы', 'SEO-оптимизация', 'Быстрая загрузка', 'Карта и соцсети']
-    },
-    'card-no-no': {
-      title: 'Сайт-визитка',
-      desc: 'Простое и быстрое решение: ваши контакты онлайн.',
-      items: ['Контакты, адрес, часы работы', 'Современный дизайн', 'Быстрая загрузка', 'Ссылки на соцсети']
-    },
-    'services-static-yes': {
-      title: 'Сайт услуг с SEO',
-      desc: 'Профессиональный сайт компании с технической SEO-настройкой. Контент фиксированный — редактирование через нас по запросу.',
-      items: ['Многостраничный сайт', 'Фиксированный контент без CMS', 'Техническая SEO-настройка', 'Google Analytics и Яндекс.Метрика']
-    },
-    'services-static-no': {
-      title: 'Сайт услуг',
-      desc: 'Чистый и быстрый сайт компании с фиксированным контентом. Правки вносим мы по вашему запросу.',
-      items: ['Многостраничный сайт', 'Фиксированный контент без CMS', 'Адаптивный дизайн', 'HTTPS и защита']
-    },
-    'landing-static-yes': {
-      title: 'Лендинг с SEO-настройкой',
-      desc: 'Одностраничник с фиксированным контентом и базовой SEO-настройкой при запуске.',
-      items: ['Одностраничный сайт', 'Фиксированный контент без CMS', 'Техническая SEO-настройка', 'Форма заявки или кнопка звонка']
-    },
-    'landing-static-no': {
-      title: 'Лендинг',
-      desc: 'Быстрый одностраничник с фиксированным контентом. Идеально для акций и промо-страниц.',
-      items: ['Одностраничный сайт', 'Фиксированный контент без CMS', 'Быстрая загрузка', 'Форма заявки или кнопка звонка']
-    },
-    'card-static-yes': {
-      title: 'Сайт-визитка с SEO-настройкой',
-      desc: 'Простое онлайн-присутствие с фиксированными контактами и базовой SEO-настройкой.',
-      items: ['Контакты, адрес, часы работы', 'Фиксированный контент без CMS', 'Техническая SEO-настройка', 'Карта и соцсети']
-    },
-    'card-static-no': {
-      title: 'Сайт-визитка',
-      desc: 'Минимальное онлайн-присутствие с фиксированным контентом. Быстро и без лишнего.',
-      items: ['Контакты, адрес, часы работы', 'Фиксированный контент без CMS', 'Адаптивный дизайн', 'Быстрая загрузка']
-    },
+  const card = document.querySelector('[data-question-card]');
+
+  if (!card) return;
+
+  const state = {
+    siteType: null,
+    design: null,
+    services: []
   };
 
-  let currentStep = 1;
-  let answers = {step1: null, step2: null, step3: null};
+  function getSelectedTagsHtml() {
 
-  const steps = document.querySelectorAll('.configurator__step[data-step]');
-  const nextBtn = document.getElementById('cfgNext');
-  const backBtn = document.getElementById('cfgBack');
-  const nav = document.getElementById('cfgNav');
-  const progressBar = document.getElementById('cfgProgressBar');
-  const progressLbl = document.getElementById('cfgProgressLabel');
-  const result = document.getElementById('cfgResult');
-  const resetBtn = document.getElementById('cfgReset');
+    const tags = [];
 
-  if (!nextBtn) return;
+    if (state.siteType) {
+      tags.push(state.siteType);
+    }
 
-  function showStep(n) {
-    steps.forEach(s => s.classList.remove('is-active'));
+    if (state.design) {
+      tags.push(state.design);
+    }
 
-    if (n === 'result') {
-      result.classList.add('is-active');
-      nav.style.display = 'none';
-      showResult();
+    state.services.forEach(item => {
+      tags.push(item);
+    });
+
+    if (!tags.length) {
+      return '';
+    }
+
+    return `
+    <div class="configurator__progress">
+
+      ${tags.map(tag => `
+        <span class="configurator__progress-tag">
+          ${tag}
+        </span>
+      `).join('')}
+
+    </div>
+  `;
+  }
+  function getStepProgressHtml(stepIndex) {
+
+    return `
+    <div class="configurator__progressbar">
+
+      <div class="configurator__progress-track">
+
+        <span class="configurator__progress-segment ${stepIndex >= 0 ? 'is-active' : ''}"></span>
+
+        <span class="configurator__progress-segment ${stepIndex >= 1 ? 'is-active' : ''}"></span>
+
+        <span class="configurator__progress-segment ${stepIndex >= 2 ? 'is-active' : ''}"></span>
+
+      </div>
+
+      <span class="configurator__step">
+        Шаг ${stepIndex + 1} из 3
+      </span>
+
+    </div>
+  `;
+  }
+
+  const questions = [
+    {
+      key: 'siteType',
+      step: 'Шаг 1 из 3',
+      title: 'Какой сайт нужен?',
+      multiple: false,
+      options: [
+        {
+          value: 'Лендинг',
+          description: 'Одностраничный сайт'
+        },
+        {
+          value: 'Сайт услуг',
+          description: 'Для компании или специалиста'
+        },
+        {
+          value: 'Многостраничный сайт',
+          description: 'Корпоративный сайт'
+        },
+        {
+          value: 'Не уверен',
+          description: ''
+        }
+      ]
+    },
+
+
+    {
+      key: 'design',
+      step: 'Шаг 2 из 3',
+      title: 'Есть ли готовый дизайн?',
+      multiple: false,
+      options: [
+        {
+          value: 'Да, дизайн готов',
+          description: ''
+        },
+        {
+          value: 'Дизайн в разработке',
+          description: ''
+        },
+        {
+          value: 'Нужен дизайнер',
+          description: ''
+        },
+        {
+          value: 'Не уверен',
+          description: ''
+        }
+      ]
+    },
+
+    {
+      key: 'services',
+      step: 'Шаг 3 из 3',
+      title: 'Дополнительные задачи',
+      subTitle: 'Можно выбрать несколько вариантов',
+      multiple: true,
+      options: [
+        {
+          value: 'SEO',
+          description: 'Подготовка к продвижению'
+        },
+        {
+          value: 'Аналитика',
+          description: 'Google и Яндекс'
+        },
+        {
+          value: 'Редактирование контента',
+          description: 'Без программиста'
+        },
+        {
+          value: 'Пока не решил',
+          description: ''
+        }
+      ]
+    }
+
+
+  ];
+
+  function getCurrentStep() {
+    if (!state.siteType) return 0;
+    if (!state.design) return 1;
+    if (!state.services.length) return 2;
+
+
+    return 'finish';
+
+
+  }
+
+
+  function removeTag(key, value) {
+
+
+    if (key === 'siteType') {
+      state.siteType = null;
+      state.design = null;
+      state.services = [];
+    }
+
+    if (key === 'design') {
+      state.design = null;
+      state.services = [];
+    }
+
+    if (key === 'service') {
+      state.services = state.services.filter(
+        item => item !== value
+      );
+    }
+    renderQuestion();
+
+  }
+
+  function animateCard(callback) {
+
+
+    card.classList.add('is-leaving');
+
+    setTimeout(() => {
+
+      callback();
+
+      card.classList.remove('is-leaving');
+
+      card.classList.add('is-entering');
+
+      requestAnimationFrame(() => {
+        card.classList.add('is-entering-active');
+      });
+
+      setTimeout(() => {
+        card.classList.remove(
+          'is-entering',
+          'is-entering-active'
+        );
+      }, 350);
+
+    }, 350);
+
+
+  }
+
+  function openModal() {
+
+    const tags = [];
+
+    if (state.siteType) {
+      tags.push(state.siteType);
+    }
+
+    if (state.design) {
+      tags.push(state.design);
+    }
+
+    state.services.forEach(item => {
+      tags.push(item);
+    });
+
+    const summary = tags.join(' • ');
+
+    const hiddenField =
+      document.getElementById('modal-cfg-result');
+
+    const summaryBlock =
+      document.getElementById('cfgModalSummary');
+
+    if (hiddenField) {
+      hiddenField.value = summary;
+    }
+
+    if (summaryBlock) {
+      summaryBlock.innerHTML = `
+    <strong>${summary}</strong>
+    `;
+    }
+
+    const modal =
+      document.getElementById('cfgModal');
+
+    if (modal) {
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+
+  }
+
+  function showSuccessScreen() {
+
+    card.innerHTML = `
+    <div class="configurator__card-content">
+
+      <span class="configurator__step">
+        Готово
+      </span>
+
+      <h3 class="configurator__card-title">
+        Заявка отправлена
+      </h3>
+
+      <p class="configurator__helper">
+        Мы получили информацию о вашем проекте и свяжемся с вами в ближайшее время.
+      </p>
+
+    </div>
+  `;
+
+  }
+
+  function renderFinishScreen() {
+
+    const tags = [];
+
+    if (state.siteType) {
+      tags.push(state.siteType);
+    }
+
+    if (state.design) {
+      tags.push(state.design);
+    }
+
+    state.services.forEach(item => {
+      tags.push(item);
+    });
+
+    const tagsHtml = tags.map(tag => `
+  <span class="configurator__progress-tag">
+    ${tag}
+  </span>
+`).join('');
+
+    card.innerHTML = `
+    <div class="configurator__card-content">
+
+      <span class="configurator__step">
+      Готово
+      </span>
+
+    <h3 class="configurator__card-title">
+      Проверим, всё ли верно?
+    </h3>
+    <div class="configurator__progress">
+  ${tagsHtml}
+</div>
+<button
+  type="button"
+  class="configurator__edit"
+  data-edit-configurator
+>
+  Изменить ответы
+</button>
+    <p class="configurator__helper">
+      Мы собрали параметры вашего проекта.
+      Нажмите кнопку ниже и оставьте контакты.
+    </p>
+
+    <div class="configurator__actions">
+      <button
+        type="button"
+        class="configurator__next"
+        data-open-configurator-modal
+      >
+        Отправить заявку 
+      </button>
+    </div>
+
+  </div>
+    `;
+
+    const button = card.querySelector(
+      '[data-open-configurator-modal]'
+    );
+
+    button.addEventListener('click', openModal);
+    const editButton = card.querySelector(
+      '[data-edit-configurator]'
+    );
+
+    editButton.addEventListener('click', () => {
+
+      state.siteType = null;
+      state.design = null;
+      state.services = [];
+
+      renderQuestion();
+
+    });
+  }
+
+  function renderQuestion() {
+    const stepIndex = getCurrentStep();
+
+    if (stepIndex === 'finish') {
+      renderFinishScreen();
       return;
     }
 
-    const target = document.querySelector(`.configurator__step[data-step="${n}"]`);
-    if (target) target.classList.add('is-active');
+    const question = questions[stepIndex];
 
-    progressBar.style.width = (n / 3 * 100) + '%';
-    progressLbl.textContent = `Шаг ${n} из 3`;
-    // 🔹 ИЗМЕНЕНИЕ ЗДЕСЬ: кнопка "Назад" видна всегда (на 1 шаге скрываем, но визуально оставляем)
-    backBtn.style.opacity = n > 1 ? '1' : '0.5'; // на 1 шаге полупрозрачная
-    backBtn.style.pointerEvents = n > 1 ? 'auto' : 'none'; // на 1 шаге неактивна
-    nextBtn.disabled = !answers['step' + n];
-    nextBtn.textContent = n === 3 ? 'Показать результат →' : 'Далее →';
-    nav.style.display = 'flex';
-  }
+    let optionsHtml = '';
 
-  function showResult() {
-    const key = `${answers.step1}-${answers.step2}-${answers.step3}`;
-    const data = RESULTS[key] || RESULTS['services-yes-yes'];
-
-    document.getElementById('cfgResultTitle').textContent = data.title;
-    document.getElementById('cfgResultDesc').textContent = data.desc;
-    document.getElementById('cfgResultList').innerHTML = data.items
-      .map(i => `<li>${i}</li>`)
-      .join('');
-
-    progressBar.style.width = '100%';
-    progressLbl.textContent = 'Готово!';
-  }
-
-  /* ── Выбор карточек ── */
-  document.querySelectorAll('.cfg-option__input').forEach(input => {
-    input.addEventListener('change', function () {
-      answers['step' + currentStep] = this.value;
-      nextBtn.disabled = false;
+    question.options.forEach(option => {
+      optionsHtml += `
+      <button
+        type="button"
+        class="configurator__option"
+        data-question="${question.key}"
+        data-value="${option.value}"
+      >
+        ${option.value}
+        ${
+        option.description
+          ? `<small>${option.description}</small>`
+          : ''
+      }
+      </button>
+    `;
     });
-  });
 
-  /* ── Передача результата в форму ── */
-  /* ── Кнопка "Оставить заявку" — открывает модалку ── */
-  document.getElementById('cfgResultBtn').addEventListener('click', () => {
-    const title = document.getElementById('cfgResultTitle').textContent;
-    const items = Array.from(document.querySelectorAll('#cfgResultList li'))
-      .map(li => li.textContent);
+    let actionButton = '';
 
-    // Заполняем скрытое поле модалки
-    const hiddenField = document.getElementById('modal-cfg-result');
-    if (hiddenField) {
-      hiddenField.value = title + '\n' + items.map(i => '• ' + i).join('\n');
+    if (question.multiple) {
+      actionButton = `
+      <div class="configurator__actions">
+        <button
+          type="button"
+          class="configurator__next"
+          id="continueServices"
+        >
+          Продолжить
+        </button>
+      </div>
+    `;
     }
 
-    // Показываем итог конфигуратора над формой
-    const summary = document.getElementById('cfgModalSummary');
-    if (summary) {
-      summary.innerHTML = `<strong>${title}</strong>` +
-        items.map(i => `• ${i}`).join('<br>');
-      summary.classList.add('is-visible');
-    }
+    // Добавляем отображение subTitle, если он есть
+    const subTitleHtml = question.subTitle
+      ? `<p class="configurator__subtitle">${question.subTitle}</p>`
+      : '';
 
-    // Открываем модалку
-    document.getElementById('cfgModal').classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-  });
+card.innerHTML = `
+      <div class="configurator__card-content">
 
-  nextBtn.addEventListener('click', () => {
-    if (!answers['step' + currentStep]) return;
-    currentStep++;
-    showStep(currentStep > 3 ? 'result' : currentStep);
-  });
+      ${getStepProgressHtml(stepIndex)}
 
-  backBtn.addEventListener('click', () => {
-    if (currentStep <= 1) return;
-    currentStep--;
-    showStep(currentStep);
-  });
+    ${getSelectedTagsHtml()}
 
-  resetBtn.addEventListener('click', () => {
-    currentStep = 1;
-    answers = {step1: null, step2: null, step3: null};
-    document.querySelectorAll('.cfg-option__input').forEach(i => {
-      i.checked = false;
+    <h3 class="configurator__card-title">
+      ${question.title}
+    </h3>
+
+    ${subTitleHtml}
+
+    <div class="configurator__options">
+      ${optionsHtml}
+    </div>
+
+    ${actionButton}
+
+  </div>
+    `;
+    bindQuestionEvents(question);
+  }
+
+  function bindQuestionEvents(question) {
+
+
+    const buttons = card.querySelectorAll(
+      '.configurator__option'
+    );
+
+    buttons.forEach(button => {
+
+      button.addEventListener('click', () => {
+
+        const value = button.dataset.value;
+
+        if (!question.multiple) {
+
+          state[question.key] = value;
+
+          animateCard(() => {
+            renderQuestion();
+          });
+
+          return;
+        }
+
+        const exists =
+          state.services.includes(value);
+
+        if (exists) {
+
+          state.services =
+            state.services.filter(
+              item => item !== value
+            );
+
+          button.classList.remove(
+            'is-selected'
+          );
+
+        } else {
+
+          state.services.push(value);
+
+          button.classList.add(
+            'is-selected'
+          );
+        }
+      });
     });
-    result.classList.remove('is-active');
-    showStep(1);
-  });
 
-  showStep(1);
+    const continueBtn =
+      document.getElementById(
+        'continueServices'
+      );
 
+    if (!continueBtn) return;
+
+    continueBtn.addEventListener(
+      'click',
+      () => {
+
+        if (!state.services.length) {
+          return;
+        }
+
+        animateCard(() => {
+          renderQuestion();
+        });
+      }
+    );
+
+  }
+
+
+  renderQuestion();
+  window.showConfiguratorSuccessScreen = showSuccessScreen;
 })();
