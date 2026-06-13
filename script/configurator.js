@@ -76,28 +76,6 @@
   </div>
 `;
   }
-  function getStepProgressHtml(stepIndex) {
-
-    return `
-    <div class="configurator__progressbar">
-
-      <div class="configurator__progress-track">
-
-        <span class="configurator__progress-segment ${stepIndex >= 0 ? 'is-active' : ''}"></span>
-
-        <span class="configurator__progress-segment ${stepIndex >= 1 ? 'is-active' : ''}"></span>
-
-        <span class="configurator__progress-segment ${stepIndex >= 2 ? 'is-active' : ''}"></span>
-
-      </div>
-
-      <span class="configurator__step">
-        Шаг ${stepIndex + 1} из 3
-      </span>
-
-    </div>
-  `;
-  }
 
   const questions = [
     {
@@ -311,101 +289,124 @@
 
   function renderFinishScreen() {
 
-    const tags = [];
-
-    if (state.siteType) {
-      tags.push(state.siteType);
-    }
-
-    if (state.design) {
-      tags.push(state.design);
-    }
-
-    state.services.forEach(item => {
-      tags.push(item);
-    });
-
-    const tagsHtml = tags.map(tag => `
-  <span class="configurator__progress-tag">
-    ${tag}
-  </span>
-`).join('');
-
     card.innerHTML = `
-<div class="configurator__card-content">
+  <div class="configurator__card-content configurator__summary-screen">
+
+    <span class="configurator__step">
+      Готово
+    </span>
+
+    <h3 class="configurator__card-title">
+      Ваш проект
+    </h3>
+
+    <p class="configurator__helper">
+      Проверьте параметры перед отправкой заявки.
+    </p>
 
 
-  <span class="configurator__step">
-    Готово
-  </span>
+    <div class="configurator__summary-list">
+
+      <div class="configurator__summary-item">
+
+        <span class="configurator__summary-name">
+          Тип сайта
+        </span>
+
+        <strong>
+          ${state.siteType ?? '—'}
+        </strong>
+
+      </div>
 
 
-  <h3 class="configurator__finish-title">
-    Ваш проект
-  </h3>
+      <div class="configurator__summary-item">
+
+        <span class="configurator__summary-name">
+          Дизайн
+        </span>
+
+        <strong>
+          ${state.design ?? '—'}
+        </strong>
+
+      </div>
 
 
-  <div class="configurator__finish-label">
-    Проверьте параметры
+      <div class="configurator__summary-item">
+
+        <span class="configurator__summary-name">
+          Дополнительно
+        </span>
+
+        <strong>
+          ${
+      state.services.length
+        ? state.services.join(', ')
+        : '—'
+    }
+        </strong>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="configurator__actions">
+
+      <button
+        type="button"
+        class="configurator__edit"
+        data-edit-configurator
+      >
+        Изменить ответы
+      </button>
+
+
+      <button
+        type="button"
+        class="configurator__next"
+        data-open-configurator-modal
+      >
+        Отправить заявку
+      </button>
+
+    </div>
+
+
   </div>
+  `;
 
-
-  <div class="configurator__finish-summary">
-    ${tagsHtml}
-  </div>
-
-
-  <p class="configurator__helper">
-    Мы собрали основные параметры проекта.
-    При необходимости вы можете изменить ответы перед отправкой.
-  </p>
-
-
-  <div class="configurator__finish-actions">
-
-
-    <button
-      type="button"
-      class="configurator__finish-edit"
-      data-edit-configurator
-    >
-      Изменить ответы
-    </button>
-
-
-    <button
-      type="button"
-      class="configurator__next"
-      data-open-configurator-modal
-    >
-      Отправить заявку
-    </button>
-
-
-  </div>
-
-
-</div>
-`;
 
     const button = card.querySelector(
       '[data-open-configurator-modal]'
     );
 
-    button.addEventListener('click', openModal);
+    button.addEventListener(
+      'click',
+      openModal
+    );
+
+
     const editButton = card.querySelector(
       '[data-edit-configurator]'
     );
 
-    editButton.addEventListener('click', () => {
 
-      state.siteType = null;
-      state.design = null;
-      state.services = [];
+    editButton.addEventListener(
+      'click',
+      () => {
 
-      renderQuestion();
+        state.siteType = null;
+        state.design = null;
+        state.services = [];
 
-    });
+        renderQuestion();
+
+      }
+    );
+
   }
 
   function renderQuestion() {
