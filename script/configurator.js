@@ -35,7 +35,7 @@
     <div class="configurator__progress">
 
       ${tags.map(tag => `
-        <span class="configurator__progress-tag">
+        <span class="configurator__selected-tag">
           ${tag}
         </span>
       `).join('')}
@@ -43,6 +43,7 @@
     </div>
   `;
   }
+
   function getProgressBarHtml(stepIndex) {
 
     if (stepIndex === 'finish') {
@@ -52,7 +53,7 @@
     return `
   <div class="configurator__progressbar">
 
-    <div class="configurator__progress-track">
+    <div class="configurator__selected">
 
       <span class="configurator__progress-segment ${stepIndex >= 0 ? 'is-active' : ''}">
       </span>

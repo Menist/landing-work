@@ -39,7 +39,7 @@
     },
     particles: { desktop: 9, mobile: 4 },
     /* Порог IntersectionObserver: элемент считается видимым при X% в viewport */
-    ioThreshold: 0.12,
+    ioThreshold: 0.25,
   };
 
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -109,7 +109,7 @@
           io.unobserve(target);
         });
       },
-      { threshold, rootMargin: "0px 0px -40px 0px" }
+      { threshold, rootMargin: "0px 0px -120px 0px" }
     );
 
     targets.forEach(el => io.observe(el));
@@ -282,7 +282,7 @@
       gsap.to(dot, {
         x: mX,
         y: mY,
-        duration: 0.08,
+        duration: 0.04,
         ease: "none",
         overwrite: true
       });
@@ -292,8 +292,8 @@
     gsap.ticker.add(() => {
       if (!needsUpdate) return;
 
-      const newX = rX + (mX - rX) * .25;
-      const newY = rY + (mY - rY) * .25;
+      const newX = rX + (mX-rX)*.45;
+      const newY = rY + (mY-rY)*.45;
 
       // Когда курсор почти догнал мышь — останавливаем ticker updates
       if (
@@ -422,22 +422,44 @@
   }
 
   /* ═══════════════════════════════════════════════════════════════════════════
-     7. PRICING — IntersectionObserver + CSS stagger
+     7. Advantages — IntersectionObserver + CSS stagger
   ═══════════════════════════════════════════════════════════════════════════ */
 
-  function initPricingReveal() {
-    const section = document.querySelector(".pricing");
+  function initAdvantagesReveal() {
+
+    const section = document.querySelector(".advantages");
+
     if (!section) return;
 
-    const header = section.querySelector(".pricing__header");
-    const cards  = section.querySelector(".pricing__cards");
 
-    section.querySelectorAll(".pricing-card").forEach((card, i) =>
-      card.style.setProperty("--i", i)
-    );
+    const spine = section.querySelector(".advantages__spine");
 
-    if (header) onVisible(header, el => el.classList.add("is-visible"), 0.15);
-    if (cards)  onVisible(cards,  el => el.classList.add("is-visible"), 0.1);
+    const layers = section.querySelectorAll(".advantages__layer");
+
+
+    layers.forEach((layer,i)=>{
+
+      layer.style.setProperty("--i", i);
+
+      onVisible(
+        layer,
+        el => el.classList.add("is-visible"),
+        0.15
+      );
+
+    });
+
+
+    if(spine){
+
+      onVisible(
+        spine,
+        el=>el.classList.add("is-visible"),
+        0.05
+      );
+
+    }
+
   }
 
   /* ═══════════════════════════════════════════════════════════════════════════
@@ -561,6 +583,7 @@
     });
   }
 
+
   /* ═══════════════════════════════════════════════════════════════════════════
      INIT
   ═══════════════════════════════════════════════════════════════════════════ */
@@ -574,13 +597,13 @@
     initCustomCursor();
     initServicesReveal();
     initAboutReveal();
-    initPricingReveal();
     initWorkReveal();
     initContactsReveal();
     initSectionFades();
     initMagneticButtons();
     initAnchorLinks();
     initLazyIframes();
+    initAdvantagesReveal();
   }
 
   if (document.readyState === "loading") {

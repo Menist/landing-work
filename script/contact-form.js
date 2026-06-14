@@ -1,6 +1,37 @@
 (function () {
   'use strict';
+  document.addEventListener('DOMContentLoaded', () => {
 
+    const iframe = document.querySelector('.js-lazy-iframe');
+
+    if (!iframe) return;
+
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            iframe.src = iframe.dataset.src;
+
+            observer.disconnect();
+
+          }
+
+        });
+
+      },
+      {
+        rootMargin: '200px'
+      }
+    );
+
+
+    observer.observe(iframe);
+
+  });
   /* ── EmailJS конфиг ── */
   const SERVICE_ID = 'service_iu0rgwg';
   const TEMPLATE_ID = 'template_w94w5fm';

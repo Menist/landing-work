@@ -77,6 +77,17 @@
   --radius-full: 999px;
   --radius-circle: 50%;
 
+  /* ── motion анимация ── */
+  --ease-smooth:
+      cubic-bezier(.16,1,.3,1);
+
+  --ease-back:
+      cubic-bezier(.34,1.56,.64,1);
+
+  --motion-fast:.35s;
+  --motion-base:.8s;
+  --motion-slow:1.2s;
+
   /* ── Тени ── */
   --shadow-card: 0 0 20px rgba(0, 0, 0, 0.1);
 

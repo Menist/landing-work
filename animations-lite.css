@@ -67,12 +67,14 @@ body {
 
 .c-cursor__ring {
   position: absolute;
-  width: 28px;
-  height: 28px;
-  border: 1.5px solid rgba(0, 0, 0, 0.3);
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid rgba(255,190,73,.55);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   will-change: transform;
+  box-shadow:
+      0 0 20px rgba(255,190,73,.25);
 }
 
 body.js-ready {
@@ -184,7 +186,7 @@ body.js-ready .cfg-result__btn {
 /* Карточки: 3D появление с rotateX */
 .service-card {
   opacity: 0;
-  transform: translateY(60px) rotateX(8deg);
+  transform: translateY(40px);
   transform-origin: top center;
   transition:
       opacity  0.95s cubic-bezier(0.16, 1, 0.3, 1),
@@ -244,54 +246,87 @@ body.js-ready .cfg-result__btn {
 
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   PRICING — stagger карточек
+   advantages — stagger карточек
    ───────────────────────────────────────────────────────────────────────────── */
 
-.pricing__title,
-.pricing__subtitle {
-  opacity: 0;
-  transform: translateY(36px);
+.advantages__spine {
+
+  transform-origin: top center;
+
+  transform:
+      translateX(-50%) scaleY(0);
+
+}
+
+
+.advantages__spine.is-visible {
+
+  transform:
+      translateX(-50%) scaleY(1);
+
+}
+
+.advantages__layer {
+
+  opacity:0;
+
+  transform:
+      translateY(30px);
+
   transition:
-      opacity  0.9s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity .9s var(--ease-smooth),
+      transform .9s var(--ease-smooth);
+
+  transition-delay:
+      calc(var(--i) * .22s);
+
 }
 
-.pricing__title    { transition-delay: 0s; }
-.pricing__subtitle { transition-delay: 0.18s; }
+.advantages__layer.is-visible {
 
-.pricing__header.is-visible .pricing__title,
-.pricing__header.is-visible .pricing__subtitle {
-  opacity: 1;
-  transform: translateY(0);
+  opacity:1;
+
+  transform:
+      translateY(0);
+
 }
+.advantages__spine::before {
 
-.pricing-card {
-  opacity: 0;
-  transform: translateY(80px) scale(0.96);
+  transform-origin:top;
+
+  transform:
+      translateX(-50%)
+      scaleY(0);
+
   transition:
-      opacity  1s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 1s cubic-bezier(0.16, 1, 0.3, 1),
-      box-shadow 0.4s ease; /* hover-тень остаётся быстрой */
-  transition-delay: calc(var(--i, 0) * 0.12s + 0.35s);
-}
+      transform 1.2s cubic-bezier(.16,1,.3,1);
 
-.pricing__cards.is-visible .pricing-card {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-.pricing-card:hover {
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.14);
 }
 
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   WORK — элементы таймлайна
-   ───────────────────────────────────────────────────────────────────────────── */
+.advantages__spine.is-visible::before {
+
+  transform:
+      translateX(-50%)
+      scaleY(1);
+
+}
+
+.advantages__spine.is-visible {
+
+  transform:
+      translateX(-50%)
+      scaleY(1);
+
+}
+
+  /* ─────────────────────────────────────────────────────────────────────────────
+     WORK — элементы таймлайна
+     ───────────────────────────────────────────────────────────────────────────── */
 
 .work__item {
   opacity: 0;
-  transform: translateX(-44px);
+  transform: translateX(-25px);
   transition:
       opacity  0.85s cubic-bezier(0.16, 1, 0.3, 1),
       transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
