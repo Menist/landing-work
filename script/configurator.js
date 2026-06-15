@@ -82,7 +82,7 @@
     {
       key: 'siteType',
       step: 'Шаг 1 из 3',
-      title: 'Какой сайт нужен?',
+      title: 'Поделитесь своей идеей.',
       multiple: false,
       options: [
         {

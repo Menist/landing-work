@@ -14,7 +14,7 @@ ol {
   --hero-surface: rgba(15, 19, 26, 0.48);
   --hero-surface-strong: rgba(10, 13, 18, 0.76);
   --hero-surface-soft: rgba(255, 255, 255, 0.07);
-  --hero-border: rgba(255, 255, 255, 0.13);
+  --hero-border: var(--border-dark);
   --hero-border-strong: rgba(255, 255, 255, 0.22);
   --hero-text-muted: rgba(245, 247, 250, 0.88);
   --hero-shadow: 0 30px 86px rgba(5, 8, 12, 0.3);
@@ -385,15 +385,6 @@ section:not(.hero).is-visible {
   z-index: 1;
 }
 
-.hero__spotlight-kicker {
-  display: inline-flex;
-  margin-bottom: 14px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.56);
-}
 
 .hero__spotlight-title {
   margin: 0 0 20px;
@@ -890,7 +881,7 @@ section:not(.hero).is-visible {
   color: rgba(244, 241, 236, .92);
   text-shadow: 0 2px var(--space-md) rgba(0, 0, 0, .22);
   letter-spacing: -0.04em;
-  line-height: .9;
+  line-height: 1;
 }
 
 .services__subtitle {
@@ -1110,7 +1101,6 @@ section:not(.hero).is-visible {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.02);
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #1e2329;
   transition: transform 0.3s cubic-bezier var(--ease-smooth),
@@ -1837,10 +1827,14 @@ section:not(.hero).is-visible {
 
   width:4px;
 
-  transform:
-      translateX(-50%);
-
   z-index:0;
+  transform-origin: top;
+
+  transform:
+      scaleY(0);
+
+  filter:
+      drop-shadow(0 0 12px rgba(255,190,73,.25));
 
 }
 
@@ -1863,14 +1857,22 @@ section:not(.hero).is-visible {
 
   left:50%;
 
-  width:2px;
-
   transform:
       translateX(-50%);
 
-  background:
-      var(--advantages-line);
+  width: 3px;
 
+  background:
+      linear-gradient(
+          to bottom,
+          transparent 0%,
+          var(--color-accent) 18%,
+          var(--color-accent) 82%,
+          transparent 100%
+      );
+
+  box-shadow:
+      0 0 18px rgba(255,190,73,.45);
 }
 
 .advantages__technical-labels {
@@ -1941,17 +1943,31 @@ section:not(.hero).is-visible {
   top: 1.06rem;
   width: clamp(68px, 7vw, 108px);
   height: 1px;
-  background-color: var(--advantages-line);
+  background:
+      linear-gradient(
+          90deg,
+          transparent,
+          var(--color-accent)
+      );
 }
 
 .advantages__layer::after {
   content: "";
   position: absolute;
   top: calc(1.06rem - 4px);
-  width: 12px;
-  height: 12px;
-  border: 1px solid var(--advantages-line);
-  background-color: var(--advantages-bg);
+  width:14px;
+  height:14px;
+
+  border-radius:50%;
+
+  border:
+      2px solid var(--color-accent);
+
+  background:
+      var(--advantages-bg);
+
+  box-shadow:
+      0 0 14px rgba(255,190,73,.45);
 }
 
 .advantages__layer--left {
@@ -1969,6 +1985,13 @@ section:not(.hero).is-visible {
 
 .advantages__layer--left::before {
   right: calc(clamp(36px, 4vw, 62px) * -1);
+  background:
+      linear-gradient(
+          90deg,
+          transparent,
+          var(--color-accent)
+      );
+  opacity:.65;
 }
 
 .advantages__layer--left::after {
@@ -1977,6 +2000,13 @@ section:not(.hero).is-visible {
 
 .advantages__layer--right::before {
   left: calc(clamp(36px, 4vw, 62px) * -1);
+  background:
+      linear-gradient(
+          90deg,
+          var(--color-accent),
+          transparent
+      );
+  opacity:.65;
 }
 
 .advantages__layer--right::after {

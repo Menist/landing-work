@@ -10,12 +10,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
 
 body {
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-light);
-  background-color: var(--color-bg-primary);
-  color: var(--color-text-primary);
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 p {
@@ -28,10 +34,19 @@ ul {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+button,
+input,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
 }

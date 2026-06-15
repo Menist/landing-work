@@ -22,6 +22,20 @@
   --color-divider: #d9d9d9;
 
   --color-hero-nav-hover: #ffbe49; /* совпадает с accent — оставлено явно для читаемости */
+
+  /* ==========================================================================
+     SEMANTIC COLORS
+     ========================================================================== */
+
+    --surface-primary: var(--color-bg-primary);
+    --surface-secondary: var(--color-bg-secondary);
+
+    --text-primary: var(--color-text-primary);
+    --text-secondary: var(--color-text-secondary);
+
+    --accent: var(--color-accent);
+
+
   /* ── Dark sections ── */
   --section-dark-bg: #07090d;
   --section-dark-card: rgba(255,255,255,.025);

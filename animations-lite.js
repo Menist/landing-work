@@ -292,8 +292,8 @@
     gsap.ticker.add(() => {
       if (!needsUpdate) return;
 
-      const newX = rX + (mX-rX)*.45;
-      const newY = rY + (mY-rY)*.45;
+      const newX = rX + (mX - rX) * .45;
+      const newY = rY + (mY - rY) * .45;
 
       // Когда курсор почти догнал мышь — останавливаем ticker updates
       if (
@@ -331,9 +331,6 @@
 
       // Ссылка IMC Computers
       '.about__link',
-
-      // Таймлайн
-      '.work__icon',
 
       // Конфигуратор
       '.cfg-option__card',
@@ -427,6 +424,7 @@
 
   function initAdvantagesReveal() {
 
+
     const section = document.querySelector(".advantages");
 
     if (!section) return;
@@ -440,6 +438,10 @@
     layers.forEach((layer,i)=>{
 
       layer.style.setProperty("--i", i);
+      section.querySelectorAll(".advantages__layer")
+        .forEach((item, i) =>
+          item.style.setProperty("--i", i)
+        );
 
       onVisible(
         layer,
@@ -472,7 +474,7 @@
 
     const titleEl  = section.querySelector(".work__title");
     const timeline = section.querySelector(".work__timeline");
-    const items    = section.querySelectorAll(".work__item");
+    const items = section.querySelectorAll(".work__step");
 
     // Заголовок
     if (titleEl) {
@@ -585,9 +587,37 @@
 
 
   /* ═══════════════════════════════════════════════════════════════════════════
-     INIT
+     configurator
   ═══════════════════════════════════════════════════════════════════════════ */
 
+  function initConfiguratorReveal() {
+
+    const section = document.querySelector(".configurator");
+    if (!section) return;
+
+
+    const header = section.querySelector(".configurator__header");
+    const stage = section.querySelector(".configurator__stage");
+    const options = section.querySelectorAll(".configurator__option");
+
+
+    if (header) {
+      onVisible(
+        section,
+        () => section.classList.add("is-visible"),
+        0.6
+      );
+    }
+
+
+    options.forEach((option, i) => {
+      option.style.setProperty("--i", i);
+    });
+
+  }
+  /* ═══════════════════════════════════════════════════════════════════════════
+     INIT
+  ═══════════════════════════════════════════════════════════════════════════ */
   function init() {
     // Помечаем body: CSS initial states активируются
     document.body.classList.add("js-ready");
@@ -604,6 +634,7 @@
     initAnchorLinks();
     initLazyIframes();
     initAdvantagesReveal();
+    initConfiguratorReveal();
   }
 
   if (document.readyState === "loading") {
