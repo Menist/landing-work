@@ -439,9 +439,6 @@
 
       layer.style.setProperty("--i", i);
       section.querySelectorAll(".advantages__layer")
-        .forEach((item, i) =>
-          item.style.setProperty("--i", i)
-        );
 
       onVisible(
         layer,

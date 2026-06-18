@@ -410,15 +410,18 @@ body.js-ready .cfg-result__btn {
 
 .contacts__map {
   opacity: 0;
-  transform: translateX(44px);
+  transform:
+      translate3d(44px,-40px,0);
   transition:
       opacity  1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.18s,
       transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.18s;
+
 }
 
 .contacts.is-visible .contacts__map {
   opacity: 1;
-  transform: translateX(0);
+  transform:
+      translate3d(0,-40px,0);
 }
 
 

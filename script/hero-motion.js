@@ -30,15 +30,15 @@ function initHeroMotion() {
     if (Math.abs(targetProgress - currentProgress) < 0.001) {
       currentProgress = targetProgress;
     }
-
-    hero.style.setProperty("--hero-bg-shift-y", `${(currentProgress * -24).toFixed(2)}px`);
-    hero.style.setProperty("--hero-glow-shift-y", `${(currentProgress * -13).toFixed(2)}px`);
-    hero.style.setProperty("--hero-overlay-shift-y", `${(currentProgress * -8).toFixed(2)}px`);
-    hero.style.setProperty("--hero-content-shift-y", `${(currentProgress * -10).toFixed(2)}px`);
-    hero.style.setProperty("--hero-copy-shift-y", `${(currentProgress * -6.5).toFixed(2)}px`);
-    hero.style.setProperty("--hero-spotlight-shift-y", `${(currentProgress * -15).toFixed(2)}px`);
-    hero.style.setProperty("--hero-overlay-opacity", (1 - currentProgress * 0.045).toFixed(3));
-    hero.style.setProperty("--hero-spotlight-opacity", (1 - currentProgress * 0.035).toFixed(3));
+    const style = hero.style;
+    style.setProperty("--hero-bg-shift-y", `${(currentProgress * -24).toFixed(2)}px`);
+    style.setProperty("--hero-glow-shift-y", `${(currentProgress * -13).toFixed(2)}px`);
+    style.setProperty("--hero-overlay-shift-y", `${(currentProgress * -8).toFixed(2)}px`);
+    style.setProperty("--hero-content-shift-y", `${(currentProgress * -10).toFixed(2)}px`);
+    style.setProperty("--hero-copy-shift-y", `${(currentProgress * -6.5).toFixed(2)}px`);
+    style.setProperty("--hero-spotlight-shift-y", `${(currentProgress * -15).toFixed(2)}px`);
+    style.setProperty("--hero-overlay-opacity", (1 - currentProgress * 0.045).toFixed(3));
+    style.setProperty("--hero-spotlight-opacity", (1 - currentProgress * 0.035).toFixed(3));
 
     if (Math.abs(targetProgress - currentProgress) >= 0.001) {
       rafId = window.requestAnimationFrame(render);
@@ -49,7 +49,25 @@ function initHeroMotion() {
   };
 
   window.addEventListener("scroll", updateTarget, { passive: true });
-  window.addEventListener("resize", updateTarget, { passive: true });
+  let resizeTimeout;
+
+  window.addEventListener(
+    "resize",
+    () => {
+
+      clearTimeout(
+        resizeTimeout
+      );
+
+      resizeTimeout =
+        setTimeout(
+          updateTarget,
+          120
+        );
+
+    },
+    { passive: true }
+  );
 
   updateTarget();
 }

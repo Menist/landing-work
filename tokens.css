@@ -1,18 +1,19 @@
-/* ==========================================================================
-   DESIGN TOKENS — единый источник правды для всего проекта
-   Меняйте значения здесь, изменения применятся везде автоматически
-   ========================================================================== */
-
 :root {
+
   /* ── Цвета ── */
   --color-accent: #ffbe49;
+  --gradient-accent:linear-gradient(
+      180deg,
+      #f1cf70 0%,
+      #ddb24a 100%
+  );
   --color-accent-hover: #dfa63e;
 
   --color-bg-primary: #ffffff;
   --color-bg-secondary: #f5f5f5;
   --color-bg-tertiary: #f0f0f0;
+  --text-muted: rgba(244,241,236,.72);
   --line-color: rgba(255,255,255,.08);
-
   --color-text-primary: #000000;
   --color-text-secondary: #333333;
 
@@ -21,25 +22,36 @@
   --color-overlay-map: rgba(0, 0, 0, 0.5);
   --color-divider: #d9d9d9;
 
+  /* ── Тёплые белые для тёмных секций ── */
+  --warm-white-primary-rgb: 248, 244, 237;
+  --warm-white-muted-rgb: 244, 239, 230;
+
+  --dark-text-primary:   rgba(var(--warm-white-primary-rgb), 0.94);
+  --dark-text-secondary: rgba(var(--warm-white-muted-rgb), 0.66);
+  --dark-text-muted:     rgba(var(--warm-white-muted-rgb), 0.40);
+
   --color-hero-nav-hover: #ffbe49; /* совпадает с accent — оставлено явно для читаемости */
 
   /* ==========================================================================
      SEMANTIC COLORS
      ========================================================================== */
 
-    --surface-primary: var(--color-bg-primary);
-    --surface-secondary: var(--color-bg-secondary);
+  --surface-primary: var(--color-bg-primary);
+  --surface-secondary: var(--color-bg-secondary);
 
-    --text-primary: var(--color-text-primary);
-    --text-secondary: var(--color-text-secondary);
-
-    --accent: var(--color-accent);
+  --text-primary: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+  --text-light: rgba(244,241,236,.92);
+  --accent: var(--color-accent);
 
 
   /* ── Dark sections ── */
-  --section-dark-bg: #07090d;
+  --dark-bg-base: #07090d;
   --section-dark-card: rgba(255,255,255,.025);
   --section-dark-card-hover: rgba(255,255,255,.04);
+
+  --dark-bg-raised: #101214;    /* advantages */
+  --dark-bg-elevated: #171818;  /* work */
 
   /* ── Borders ── */
   --border-dark: rgba(255,255,255,.08);
@@ -133,3 +145,8 @@
   --icon-size-md: 80px;
   --icon-size-lg: 96px;
 }
+
+/* ==========================================================================
+   DESIGN TOKENS — единый источник правды для всего проекта
+   Меняйте значения здесь, изменения применятся везде автоматически
+   ========================================================================== */

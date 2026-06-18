@@ -82,7 +82,7 @@
     {
       key: 'siteType',
       step: 'Шаг 1 из 3',
-      title: 'Поделитесь своей идеей.',
+      title: 'Какой сайт хотите создать?',
       multiple: false,
       options: [
         {
@@ -133,7 +133,7 @@
     {
       key: 'services',
       step: 'Шаг 3 из 3',
-      title: 'Дополнительные задачи',
+      title: 'Что ещё потребуется?',
       subTitle: 'Можно выбрать несколько вариантов',
       multiple: true,
       options: [
@@ -195,7 +195,14 @@
   }
 
   function animateCard(callback) {
+    const reduced = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
 
+    if (reduced) {
+      callback();
+      return;
+    }
 
     card.classList.add('is-leaving');
 
@@ -224,6 +231,30 @@
   }
 
   function openModal() {
+
+    const modalStatus =
+      document.getElementById('modalStatus');
+
+    if (modalStatus) {
+      modalStatus.textContent = '';
+      modalStatus.className = 'contacts__status';
+    }
+
+    const modalForm =
+      document.getElementById('modalContactForm');
+
+    if (modalForm) {
+      modalForm.reset();
+    }
+
+    const hidden =
+      document.getElementById(
+        'modal-cfg-result'
+      );
+
+    if (hidden) {
+      hidden.value = '';
+    }
 
     const tags = [];
 
@@ -268,25 +299,6 @@
 
   }
 
-  function showSuccessScreen() {
-
-    card.innerHTML = `
-    <div class="configurator__card-content">
-
-     ${getProgressBarHtml('finish')}
-
-      <h3 class="configurator__card-title">
-        Заявка отправлена
-      </h3>
-
-      <p class="configurator__helper">
-        Мы получили информацию о вашем проекте и свяжемся с вами в ближайшее время.
-      </p>
-
-    </div>
-  `;
-
-  }
 
   function renderFinishScreen() {
 
@@ -556,8 +568,83 @@ ${getSelectedTagsHtml()}
     );
 
   }
+  function showSuccessScreen() {
 
+    card.innerHTML = `
+<div class="configurator__card-content">
 
+${getProgressBarHtml('finish')}
+
+<h3 class="configurator__card-title">
+Заявка отправлена
+</h3>
+
+<p class="configurator__helper">
+Мы получили информацию о вашем проекте и свяжемся с вами в ближайшее время.
+</p>
+
+<div class="configurator__actions">
+
+<button
+type="button"
+class="configurator__finish-edit"
+data-reset-configurator
+>
+Создать ещё одну заявку
+</button>
+
+</div>
+
+</div>
+`;
+
+    const resetBtn =
+      card.querySelector(
+        '[data-reset-configurator]'
+      );
+
+    resetBtn.addEventListener(
+      'click',
+      () => {
+
+        window.__configurator.reset();
+
+      }
+    );
+
+  }
+  // ЭКСПОРТИРУЕМ ЧЕРЕЗ ГЛОБАЛЬНЫЙ ОБЪЕКТ
+  window.__configurator = {
+    showSuccessScreen: showSuccessScreen,
+
+    reset: function() {
+
+      state.siteType = null;
+      state.design = null;
+      state.services = [];
+
+      // очищаем статус модальной формы
+      const modalStatus =
+        document.getElementById('modalStatus');
+
+      if (modalStatus) {
+        modalStatus.textContent = '';
+        modalStatus.className = 'contacts__status';
+      }
+
+      // очищаем саму форму
+      const modalForm =
+        document.getElementById('modalContactForm');
+
+      if (modalForm) {
+        modalForm.reset();
+      }
+
+      renderQuestion();
+    }
+  };
+
+  // ЗАПУСКАЕМ
   renderQuestion();
-  window.showConfiguratorSuccessScreen = showSuccessScreen;
+
 })();
